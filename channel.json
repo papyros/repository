@@ -1,0 +1,10 @@
+{
+	"name": "papyros",
+	"packages": [
+		"ostree-git", "xdg-app-git",
+		"qml-extras", "qml-material", "papyros-shell", "gdm",
+        "qt5-base-git", "qt5-declarative-git", "qt5-wayland-dev-git",
+        "xf86-video-vesa", "xorg-server", "xorg-server", "wayland", "sudo"
+    ],
+    "origin_url": "http://dash.papyros.io/ostree/papyros",
+}
