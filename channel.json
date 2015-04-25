@@ -6,5 +6,5 @@
         "qt5-base-git", "qt5-declarative-git", "qt5-wayland-dev-git",
         "xf86-video-vesa", "xorg-server", "xorg-server", "wayland", "sudo"
     ],
-    "origin_url": "http://dash.papyros.io/ostree/papyros",
+    "origin_url": "http://dash.papyros.io/ostree/papyros"
 }
