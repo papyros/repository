@@ -24,10 +24,9 @@ optdepends=(
 	"libfbclient: Firebird/iBase driver"
 )
 provides=("$_pkgname")
-source=("$_pkgname::git://gitorious.org/qt/qtbase.git#branch=5.5"
-	"compilation_error.patch")
-sha256sums=("SKIP"
-	"722282a18e0b72d401fc8429a5932a6023972d57314853c54ba4507d001cc85e")
+source=("$_pkgname::git://gitorious.org/qt/qtbase.git#branch=5.5")
+
+sha256sums=("SKIP")
 
 pkgver() {
 	cd "$srcdir/$_pkgname"
@@ -39,8 +38,6 @@ prepare() {
 	sed -i "s|-O2|${CXXFLAGS}|" mkspecs/common/{g++,gcc}-base.conf
 	sed -i "/^QMAKE_LFLAGS_RPATH/s| -Wl,-rpath,||g" "mkspecs/common/gcc-base-unix.conf"
 	sed -i "/^QMAKE_LFLAGS\s/s|+=|+= ${LDFLAGS}|g" "mkspecs/common/gcc-base.conf"
-
-	git apply ../compilation_error.patch
 }
 
 build() {
