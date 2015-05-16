@@ -7,7 +7,7 @@ pkgdesc="A cross-platform application and UI framework (QtWayland)"
 arch=('i686' 'x86_64' 'armv6h')
 url="http://qt-project.org/"
 license=('GPL3' 'LGPL')
-depends=('qt5-base' 'qt5-declarative' 'libxcomposite' 'libxrender' 'mtdev' 'wayland')
+depends=('qt5-base-git' 'qt5-declarative-git' 'libxcomposite' 'libxrender' 'mtdev' 'wayland')
 provides=('qt5-wayland')
 conflicts=('qt5-wayland')
 replaces=('qt5-wayland')
@@ -16,7 +16,7 @@ options=('!libtool' 'debug')
 #source=(git://gitorious.org/qt/qtwayland.git#branch=dev)
 source=(git://github.com/maui-packages/qtwayland#branch=output55)
 md5sums=('SKIP')
-_ver=5.6.0
+_ver=5.5.0
 
 pkgver() {
   cd qtwayland
