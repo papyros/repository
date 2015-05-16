@@ -25,7 +25,12 @@ pkgver() {
 prepare() {
 	mkdir -p build
 	cd build
-	cmake "$srcdir/$pkgname" -DCMAKE_INSTALL_PREFIX=/usr -DQML_INSTALL_DIR=lib/qt/qml
+	cmake "$srcdir/$pkgname" \
+			-DCMAKE_INSTALL_PREFIX=/usr \
+			-DLIB_INSTALL_DIR=lib \
+			-DLIBEXEC_INSTALL_DIR=lib \
+			-DQML_INSTALL_DIR=lib/qt/qml \
+			-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	make
 }
 
