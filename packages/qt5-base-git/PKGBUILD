@@ -5,7 +5,7 @@
 _pkgname=qt5-base
 pkgname=$_pkgname-git
 pkgver=v5.4.1.1228.gefe3f63
-pkgrel=1
+pkgrel=2
 pkgdesc="A cross-platform application and UI framework"
 arch=("i686" "x86_64")
 url="https://qt-project.org/"
@@ -24,6 +24,7 @@ optdepends=(
 	"libfbclient: Firebird/iBase driver"
 )
 provides=("$_pkgname")
+conflicts=("$_pkgname")
 source=("$_pkgname::git://gitorious.org/qt/qtbase.git#branch=5.5")
 
 sha256sums=("SKIP")
