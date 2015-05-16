@@ -10,8 +10,13 @@ license=("LGPL")
 depends=("qt5-declarative-git" "qt5-graphicaleffects-git" "kdeclarative" "qml-material" "taglib")
 makedepends=("git" "cmake" "intltool")
 provides=("$pkgname")
-source=("$pkgname::git+https://github.com/papyros/files-app.git#tag=v$pkgver")
+source=("$pkgname::git+https://github.com/papyros/files-app.git#branch=master")
 sha256sums=("SKIP")
+
+pkgver() {
+	cd "$srcdir/$pkgname"
+	git describe --always | sed "s/-/./g"
+}
 
 prepare() {
 	mkdir -p build

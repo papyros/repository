@@ -10,8 +10,13 @@ license=("LGPL")
 depends=("qt5-base-git" "qt5-declarative-git")
 makedepends=("git")
 provides=("$pkgname")
-source=("$pkgname::git+https://github.com/papyros/qml-extras.git#tag=v$pkgver")
+source=("$pkgname::git+https://github.com/papyros/qml-extras.git#branch=develop")
 sha256sums=("SKIP")
+
+pkgver() {
+	cd "$srcdir/$pkgname"
+	git describe --always | sed "s/-/./g"
+}
 
 prepare() {
 	mkdir -p build

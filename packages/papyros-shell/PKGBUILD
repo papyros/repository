@@ -8,20 +8,23 @@ arch=("i686" "x86_64")
 url="https://github.com/papyros/papyros-shell"
 license=("GPL")
 depends=("qt5-base-git" "qt5-declarative-git" "qt5-quickcontrols-git" "qt5-graphicaleffects-git"
- 		 "qt5-wayland-dev-git" "gsettings-qt-bzr" "qml-material" "qml-extras" "qml-desktop")
-makedepends=("git" "python")
+ 		 "greenisland-git" "gsettings-qt-bzr" "qml-material" "qml-extras" "qml-desktop"
+ 		 "kdeclarative" 'pam' 'libpulse' 'libqtxdg' 'solid')
+optdepends=('pulseaudio: audio support')
+makedepends=("git" "python" "extra-cmake-modules")
 provides=("$pkgname")
-source=("$pkgname::git+https://github.com/papyros/papyros-shell.git#tag=v$pkgver")
+source=("$pkgname::git+https://github.com/papyros/papyros-shell.git#branch=develop")
 sha256sums=("SKIP")
 
-prepare() {
-	pushd "$srcdir/$pkgname"
-	./qrc.py qml images > papyros-shell.qrc
-	popd
+pkgver() {
+	cd "$srcdir/$pkgname"
+	git describe --always | sed "s/-/./g"
+}
 
+prepare() {
 	mkdir -p build
 	cd build
-	qmake "$srcdir/$pkgname"
+	cmake "$srcdir/$pkgname" -DCMAKE_INSTALL_PREFIX=/usr
 	make
 }
 
