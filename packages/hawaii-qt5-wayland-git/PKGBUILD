@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=hawaii-qt5-wayland-git
-pkgver=v5.4.0.beta1.76.g4cc154a
+pkgver=v5.4.0.beta1.106.g6e80c7f
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtWayland)"
 arch=('i686' 'x86_64' 'armv6h')
