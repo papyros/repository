@@ -1,7 +1,7 @@
 # Maintainer: Michael Spencer <sonrisesoftware@gmail.com>
 
 pkgname=qml-extras
-pkgver=0.1.r0.g9ec7ee8
+pkgver=0.1.r1.g41ec929
 pkgrel=1
 pkgdesc="A UI framework for QtQuick implementing Material Design"
 arch=("i686" "x86_64")
