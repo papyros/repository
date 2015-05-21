@@ -1,7 +1,7 @@
 # Maintainer: Michael Spencer <sonrisesoftware@gmail.com>
 
 pkgname=qml-material
-pkgver=0.1.r6.g40705c8
+pkgver=0.1.r10.gf8bb364
 pkgrel=1
 pkgdesc="A UI framework for QtQuick implementing Material Design"
 arch=("i686" "x86_64")

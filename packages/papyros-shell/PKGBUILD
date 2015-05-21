@@ -1,7 +1,7 @@
 # Maintainer: Michael Spencer <sonrisesoftware@gmail.com>
 
 pkgname=papyros-shell
-pkgver=0.0.5.r62.gb4551d9
+pkgver=0.0.5.r70.gbeb9856
 pkgrel=1
 pkgdesc="Wayland and QtQuick based desktop shell for Papyros"
 arch=("i686" "x86_64")
