@@ -1,6 +1,6 @@
 _pkgname=xdg-app
 pkgname=$_pkgname-git
-pkgver=d12c3cd
+pkgver=50b3de3
 pkgrel=1
 url="https://github.com/alexlarsson/xdg-app/"
 pkgdesc='Application deployment framework for desktop apps.'
