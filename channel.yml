@@ -1,0 +1,9 @@
+name: Papyros
+channel: testing
+origin_url: http://dash.papyros.io/ostree/papyros/testing
+packages:
+  - ostree-git
+  - xdg-app-git
+  - qml-extras
+  - qml-material
+  - papyros-shell
