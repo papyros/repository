@@ -8,8 +8,8 @@ arch=("i686" "x86_64")
 url="https://github.com/papyros/papyros-shell"
 license=("GPL")
 depends=("qt5-base-git" "qt5-declarative-git" "qt5-quickcontrols-git" "qt5-graphicaleffects-git"
- 		 "greenisland-git" "gsettings-qt-bzr" "qml-material" "qml-extras"
- 		 "kdeclarative" 'pam' 'libpulse' 'libqtxdg' 'solid' 'kconfig' 'sddm')
+ 		 "greenisland-git" "qml-material" "qml-extras" "kdeclarative" 
+ 		 "pam" "libpulse" "libqtxdg" "solid" "kconfig" "sddm")
 optdepends=('pulseaudio: audio support')
 makedepends=("git" "python" "extra-cmake-modules")
 provides=("$pkgname")
