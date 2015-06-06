@@ -7,3 +7,4 @@ packages:
   - qml-extras
   - qml-material
   - papyros-shell
+  - gdm
