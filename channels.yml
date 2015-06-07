@@ -2,10 +2,10 @@ name: Papyros
 origin_url: http://dash.papyros.io/ostree
 channels:
   runtime:
-	packages:
-  	  - ostree-git
-  	  - xdg-app-git
-  	  - qml-extras
-  	  - qml-material
-  	  - papyros-shell
-  	  - gdm
+    packages:
+      - ostree-git
+      - xdg-app-git
+      - qml-extras
+      - qml-material
+      - papyros-shell
+      - gdm
