@@ -1,6 +1,6 @@
 name: Papyros
 channel: testing
-origin_url: http://dash.papyros.io/ostree/papyros/testing
+origin_url: http://dash.papyros.io/ostree
 packages:
   - ostree-git
   - xdg-app-git
