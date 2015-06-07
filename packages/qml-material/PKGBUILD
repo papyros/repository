@@ -15,11 +15,10 @@ source=("$pkgname::git+https://github.com/papyros/qml-material.git#branch=develo
 sha256sums=("SKIP")
 
 pkgver() {
-  cd "$pkgname"
-  # cutting off 'foo-' prefix that presents in the git tag
-  git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+    cd "$pkgname"
+    # cutting off 'foo-' prefix that presents in the git tag
+    git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
-
 prepare() {
 	mkdir -p build
 	cd build
@@ -30,4 +29,16 @@ prepare() {
 package() {
 	cd build
 	make INSTALL_ROOT="$pkgdir" install
+}
+
+# Additional functions to generate a changelog
+
+changelog() {
+    cd "$pkgname"
+    git log $1..HEAD --no-merges --format=" * %s"
+}
+
+gitref() {
+    cd "$pkgname"
+    git describe --always
 }

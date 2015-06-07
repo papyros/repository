@@ -38,3 +38,15 @@ package() {
 	cd build
 	make DESTDIR="${pkgdir}" install
 }
+
+# Additional functions to generate a changelog
+
+changelog() {
+    cd "$pkgname"
+  	git log $1..HEAD --no-merges --format=" * %s"
+}
+
+gitref() {
+    cd "$pkgname"
+  	git describe --always
+}
