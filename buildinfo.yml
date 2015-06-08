@@ -5,7 +5,7 @@ packages:
   ostree-git: '2015.4'
   papyros-shell: 5a6fc40d95820a78467c7558e75c486bb1cd67b1
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
-  qml-material: 418ab4e81cde54be2696aa197e6100c91116b353
+  qml-material: 388bec8e2aaf3fb461787a675183fc5389718842
   qt5-base-git: v5.5.0.beta1.138.g1485c2f
   qt5-declarative-git: v5.5.0.beta1.23.g30aa0a1
   qt5-graphicaleffects-git: v5.5.0.beta1
