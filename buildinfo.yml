@@ -1,15 +1,15 @@
 packages:
-  greenisland-git: 20150608.bcd42c1
-  hawaii-qt5-wayland-git: bcd42c1
+  greenisland-git: 20150531.9fa372f
+  hawaii-qt5-wayland-git: v5.4.0.beta1.106.g6e80c7f
   linux-user-chroot: '2013.1'
   ostree-git: '2015.4'
-  papyros-shell: bcd42c13f1a52d8bdeb9f04aa04480ab286262df
-  qml-extras: bcd42c13f1a52d8bdeb9f04aa04480ab286262df
-  qml-material: bcd42c13f1a52d8bdeb9f04aa04480ab286262df
-  qt5-base-git: bcd42c1
-  qt5-declarative-git: bcd42c1
-  qt5-graphicaleffects-git: bcd42c1
-  qt5-quickcontrols-git: bcd42c1
-  qt5-svg-git: bcd42c1
-  qt5-xmlpatterns-git: bcd42c1
-  xdg-app-git: bcd42c1
+  papyros-shell: 5a6fc40d95820a78467c7558e75c486bb1cd67b1
+  qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
+  qml-material: 418ab4e81cde54be2696aa197e6100c91116b353
+  qt5-base-git: v5.5.0.beta1.138.g1485c2f
+  qt5-declarative-git: v5.5.0.beta1.23.g30aa0a1
+  qt5-graphicaleffects-git: v5.5.0.beta1
+  qt5-quickcontrols-git: v5.5.0.beta1.6.g1f0daa7
+  qt5-svg-git: v5.5.0.beta1
+  qt5-xmlpatterns-git: v5.5.0.beta1
+  xdg-app-git: a39197c
