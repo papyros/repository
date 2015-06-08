@@ -1,15 +1,15 @@
 packages:
-  greenisland-git: 20150608.55cf768-1
-  hawaii-qt5-wayland-git: 55cf768-1
+  greenisland-git: 20150608.8517651-1
+  hawaii-qt5-wayland-git: 8517651-1
   linux-user-chroot: 2013.1-2
   ostree-git: 2015.4-1
-  papyros-shell: 55cf768
-  qml-extras: 55cf768
-  qml-material: 55cf768
-  qt5-base-git: 55cf768-1
-  qt5-declarative-git: 55cf768-1
-  qt5-graphicaleffects-git: 55cf768-1
-  qt5-quickcontrols-git: 55cf768-1
-  qt5-svg-git: 55cf768-1
-  qt5-xmlpatterns-git: 55cf768-1
-  xdg-app-git: 55cf768-1
+  papyros-shell: '8517651'
+  qml-extras: '8517651'
+  qml-material: '8517651'
+  qt5-base-git: 8517651-1
+  qt5-declarative-git: 8517651-1
+  qt5-graphicaleffects-git: 8517651-1
+  qt5-quickcontrols-git: 8517651-1
+  qt5-svg-git: 8517651-1
+  qt5-xmlpatterns-git: 8517651-1
+  xdg-app-git: 8517651-1
