@@ -48,5 +48,5 @@ changelog() {
 
 gitref() {
     cd "$pkgname"
-  	git describe --always
+  	git rev-parse HEAD
 }
