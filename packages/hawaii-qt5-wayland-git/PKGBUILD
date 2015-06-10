@@ -2,7 +2,7 @@
 
 pkgname=hawaii-qt5-wayland-git
 pkgver=v5.4.0.beta1.106.g6e80c7f
-pkgrel=1
+pkgrel=2
 pkgdesc="A cross-platform application and UI framework (QtWayland)"
 arch=('i686' 'x86_64' 'armv6h')
 url="http://qt-project.org/"
@@ -17,6 +17,7 @@ options=('!libtool' 'debug')
 source=(git://github.com/maui-packages/qtwayland#branch=output55)
 md5sums=('SKIP')
 _ver=5.5.0
+options=(debug !strip)
 
 pkgver() {
   cd qtwayland
@@ -29,7 +30,7 @@ prepare() {
 
 build() {
   cd qtwayland
-  qmake CONFIG+=wayland-compositor
+  qmake CONFIG+=wayland-compositor CONFIG+=debug
   make
 }
 
