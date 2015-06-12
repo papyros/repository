@@ -3,7 +3,7 @@ packages:
   hawaii-qt5-wayland-git: v5.4.0.beta1.106.g6e80c7f
   linux-user-chroot: '2013.1'
   ostree-git: '2015.7'
-  papyros-shell: ba14e0b555556c85515fee9b2cb7b08070e80f6b
+  papyros-shell: ef593e5b3e8afd293946ae3f9ce6e18e8b46803f
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: 388bec8e2aaf3fb461787a675183fc5389718842
   qt5-base-git: v5.5.0.beta1.138.g1485c2f
