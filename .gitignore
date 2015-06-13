@@ -22,4 +22,5 @@ packages/qml-material/qml-material
 packages/qml-extras/qml-extras
 packages/papyros-shell/papyros-shell
 packages/papyros-files/papyros-files
+packages/papyros-settings/papyros-settings
 packages/ostree-git/ostree-git

@@ -1,18 +1,16 @@
 # Maintainer: Michael Spencer <sonrisesoftware@gmail.com>
 
-pkgname=papyros-files
+pkgname=papyros-settings
 pkgver=0.0.4.r3.g433bcdf
 pkgrel=1
-pkgdesc="The file manager for Papyros"
+pkgdesc="The file settings for Papyros"
 arch=("i686" "x86_64")
-url="https://github.com/papyros/files-app"
-license=("LGPL")
-depends=("qt5-declarative-git" "qt5-graphicaleffects-git" "kdeclarative" "qml-material" "taglib"
-	"kdeclarative")
-makedepends=("git" "cmake" "intltool" "extra-cmake-modules")
-optdepends=('pulseaudio: audio support')
+url="https://github.com/papyros/settings-app"
+license=("GPL")
+depends=("qt5-declarative-git" "qml-material" "papyros-shell")
+makedepends=("git" "cmake" "extra-cmake-modules")
 provides=("$pkgname")
-source=("$pkgname::git+https://github.com/papyros/files-app.git#branch=master")
+source=("$pkgname::git+https://github.com/papyros/settings-app.git#branch=develop")
 sha256sums=("SKIP")
 
 pkgver() {
