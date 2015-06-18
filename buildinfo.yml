@@ -1,5 +1,5 @@
 packages:
-  greenisland-git: 20150531.9fa372f
+  greenisland-git: '20150618.4855207'
   hawaii-qt5-wayland-git: v5.4.0.beta1.106.g6e80c7f
   linux-user-chroot: '2013.1'
   ostree-git: '2015.7'
@@ -12,5 +12,6 @@ packages:
   qt5-graphicaleffects-git: v5.5.0.beta1
   qt5-quickcontrols-git: v5.5.0.beta1.6.g1f0daa7
   qt5-svg-git: v5.5.0.beta1
+  qt5-wayland-dev-git: 5.5.0.beta1.r6.g11a28b2
   qt5-xmlpatterns-git: v5.5.0.beta1
   xdg-app-git: d52c091

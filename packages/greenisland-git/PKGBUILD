@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=greenisland-git
-pkgver=20150531.9fa372f
+pkgver=20150618.4855207
 pkgrel=1
 pkgdesc="Green Island: Qt-based compositor infrastructure for Wayland"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
