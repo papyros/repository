@@ -24,7 +24,7 @@ options=("staticlibs" "libtool")
 sha256sums=("SKIP")
 
 _ver=5.5
-source=("$_pkgname::git+https://gitorious.org/qt/qtwayland.git#branch=${_ver}")
+source=("$_pkgname::git://code.qt.io/qt/qtwayland.git#branch=${_ver}")
 
 # Number of real cores * number of processors = :) # TODO : Repair
 #_cores_multiplication_processors=$(( `grep "^core id" /proc/cpuinfo | sort -u | wc -l` * `grep "^physical id" /proc/cpuinfo | sort -u | wc -l` ))
