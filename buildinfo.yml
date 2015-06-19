@@ -6,8 +6,8 @@ packages:
   papyros-settings: 585dda2f2f3733a5f1b4195eeb299d344af41c4f
   papyros-shell: d7f4629336064fbe7647f733a5f95415c89b7d18
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
-  qml-material: d450f548f2755159cba0510d5f54d9859e39dfb9
-  qt5-base-git: v5.5.0.beta1.337.gde81159
+  qml-material: b382e69f828d035ad8250a62ce5d7989170a77a7
+  qt5-base-git: v5.5.0.beta1.338.g36df330
   qt5-declarative-git: v5.5.0.beta1.48.g9dee99e
   qt5-graphicaleffects-git: v5.5.0.beta1
   qt5-quickcontrols-git: v5.5.0.beta1.23.g234dc90
