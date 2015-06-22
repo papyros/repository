@@ -4,7 +4,7 @@ packages:
   linux-user-chroot: '2013.1'
   ostree-git: '2015.7'
   papyros-settings: 585dda2f2f3733a5f1b4195eeb299d344af41c4f
-  papyros-shell: bfeca242538a22deb6120ad3a5de8fc4539bfe05
+  papyros-shell: a381c4f05b5d4e6760980128f5f2301114767f6e
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: b382e69f828d035ad8250a62ce5d7989170a77a7
   qt5-base-git: v5.5.0.beta1.345.g56aad2a
