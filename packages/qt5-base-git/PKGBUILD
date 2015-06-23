@@ -5,7 +5,7 @@
 _pkgname=qt5-base
 pkgname=$_pkgname-git
 pkgver=v5.5.0.beta1.353.g4ce05c6
-pkgrel=1
+pkgrel=2
 pkgdesc="A cross-platform application and UI framework"
 arch=("i686" "x86_64")
 url="https://qt-project.org/"
@@ -61,7 +61,8 @@ build() {
 		-optimized-qmake \
 		-dbus-linked \
 		-reduce-relocations \
-		-opengl es2
+		-opengl es2 \
+		-libinput
 	make
 }
 
