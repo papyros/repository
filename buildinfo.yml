@@ -7,11 +7,11 @@ packages:
   papyros-shell: 9b476e640fecf9d021fa2c896ccb8e2240340550
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: 0d445f303bf917b6b34f7cb48f82aaeaa89a9fdb
-  qt5-base-git: v5.5.0.beta1.353.g4ce05c6
-  qt5-declarative-git: v5.5.0.beta1.48.g9dee99e
-  qt5-graphicaleffects-git: v5.5.0.beta1
-  qt5-quickcontrols-git: v5.5.0.beta1.23.g234dc90
-  qt5-svg-git: v5.5.0.beta1
+  qt5-base-git: v5.5.0.beta1.356.gbac1116
+  qt5-declarative-git: v5.5.0.beta1.49.g3e5a89a
+  qt5-graphicaleffects-git: v5.5.0.rc1
+  qt5-quickcontrols-git: v5.5.0.beta1.24.g686f6a7
+  qt5-svg-git: v5.5.0.rc1
   qt5-wayland-dev-git: 5.5.0.beta1.r25.ge890425
-  qt5-xmlpatterns-git: v5.5.0.beta1.2.g25ad8b7
-  xdg-app-git: d52c091
+  qt5-xmlpatterns-git: v5.5.0.rc1.2.g25ad8b7
+  xdg-app-git: 0774aa3
