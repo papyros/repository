@@ -21,16 +21,14 @@ provides=("${_pkgname}")
 conflicts=("${_pkgname}" "${_pkgname}-git")
 options=("staticlibs" "libtool")
 
-sha256sums=("SKIP")
-
 _ver=5.5
 source=("$_pkgname::git://code.qt.io/qt/qtwayland.git#branch=${_ver}"
         "0001-Update-wayland.xml-to-1.6.patch"
         "0002-Add-support-for-keyboard-repeat-rate-and-delay.patch")
 
-# Number of real cores * number of processors = :) # TODO : Repair
-#_cores_multiplication_processors=$(( `grep "^core id" /proc/cpuinfo | sort -u | wc -l` * `grep "^physical id" /proc/cpuinfo | sort -u | wc -l` ))
-
+sha256sums=('SKIP'
+            '1a7ce4a79474b9c5a307b90b9f35a15bc2f7a314676a91e411d3e07dc97ec5d5'
+            '85b9bedf97f349d748c6e042ded8e052cec1bd0c3ffca5d51decfeb7fa2d4069')
 
 pkgver() {
   	cd "$srcdir/${_pkgname}"
