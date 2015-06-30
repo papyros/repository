@@ -1,6 +1,6 @@
 _pkgname=xdg-app
 pkgname=$_pkgname-git
-pkgver=4f73eaf
+pkgver=22bdf35
 pkgrel=1
 url="https://wiki.gnome.org/Projects/SandboxedApps"
 pkgdesc='Application deployment framework for desktop apps.'
