@@ -8,10 +8,10 @@ packages:
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: 3c640c3ada124c73b4ae2aa555d6dfdc35d60584
   qt5-base-git: v5.5.0.beta1.362.gec8c1dc
-  qt5-declarative-git: v5.5.0.rc1.19.ga3f686c
-  qt5-graphicaleffects-git: v5.5.0.rc1.1.gb4ef5a9
-  qt5-quickcontrols-git: v5.5.0.rc1.9.gd48cd2c
-  qt5-svg-git: v5.5.0.rc1.1.g93d77ed
-  qt5-wayland-dev-git: 5.5.0.rc1.r17.g05ea6b9
-  qt5-xmlpatterns-git: v5.5.0.rc1.3.g69c5390
+  qt5-declarative-git: v5.5.0.19.ga3f686c
+  qt5-graphicaleffects-git: v5.5.0.1.gb4ef5a9
+  qt5-quickcontrols-git: v5.5.0.11.g56dfb59
+  qt5-svg-git: v5.5.0.1.g93d77ed
+  qt5-wayland-dev-git: 5.5.0.r17.g05ea6b9
+  qt5-xmlpatterns-git: v5.5.0.3.g69c5390
   xdg-app-git: ef223b6
