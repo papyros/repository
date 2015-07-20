@@ -12,7 +12,7 @@ makedepends=( 'git' )
 provides=( 'xdg-app' )
 conflicts=( 'xdg-app' )
 source=(
-	"git://anongit.freedesktop.org/${_pkgbase}/${_pkgbase}
+	"git://anongit.freedesktop.org/${_pkgbase}/${_pkgbase}"
 )
 sha512sums=(
 	'SKIP'
