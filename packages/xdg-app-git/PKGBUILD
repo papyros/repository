@@ -1,13 +1,13 @@
 # Maintainer: Max Bruckner
 _pkgbase=xdg-app
 pkgname="${_pkgbase}-git"
-pkgver=r379.942e4bc
+pkgver=r437.f76f6a3
 pkgrel=1
 pkgdesc="Tool for managing sandboxed applications and their runtimes."
 arch=( "i686" "x86_64" )
 url="https://github.com/alexlarsson/xdg-app"
 license=('unknown')
-depends=( 'ostree-git' 'fuse' 'xsltproc' )
+depends=( 'ostree-git' 'fuse' 'libxslt' )
 makedepends=( 'git' )
 provides=( 'xdg-app' )
 conflicts=( 'xdg-app' )
