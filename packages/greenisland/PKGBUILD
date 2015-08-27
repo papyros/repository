@@ -17,11 +17,6 @@ _gitname=greenisland
 source=(${_gitname}::${_gitroot}#tag=v${pkgver})
 md5sums=('SKIP')
 
-pkgver() {
-	cd ${srcdir}/${_gitname}
-	echo "$(git log -1 --format="%cd" --date=short | tr -d '-').$(git log -1 --format="%h")"
-}
-
 prepare() {
 	mkdir build
 }
