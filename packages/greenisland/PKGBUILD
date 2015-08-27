@@ -1,20 +1,20 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=greenisland-git
-pkgver=20150721.bd436e1
+pkgname=greenisland
+pkgver=0.6.0
 pkgrel=1
 pkgdesc="Green Island: Qt-based compositor infrastructure for Wayland"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://github.com/greenisland/greenisland.git'
 license=('GPL', 'LGPL')
-depends=('qt5-declarative' 'qt5-wayland-dev-git')
+depends=('qt5-declarative' 'qt5-wayland-dev-git' 'xcb-util-cursor')
 makedepends=('git' 'gdb' 'extra-cmake-modules')
 options=('debug')
 
 _gitroot="git://github.com/greenisland/greenisland.git"
 _gitbranch=master
 _gitname=greenisland
-source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
+source=(${_gitname}::${_gitroot}#tag=v${pkgver})
 md5sums=('SKIP')
 
 pkgver() {
