@@ -21,7 +21,7 @@ index 4e106f5..f8eca4f 100644
 @@ -138,6 +138,32 @@ void QWaylandInputDevice::sendFullKeyEvent(QWaylandSurface *surface, QKeyEvent *
      d->sendFullKeyEvent(surface->handle(), event);
  }
- 
+
 +quint32 QWaylandInputDevice::keyboardRepeatRate() const
 +{
 +    if (handle()->keyboardDevice())
@@ -56,9 +56,9 @@ index ba28bbd..937884d 100644
 --- a/src/compositor/compositor_api/qwaylandinput.h
 +++ b/src/compositor/compositor_api/qwaylandinput.h
 @@ -114,6 +114,12 @@ public:
- 
+
      void sendFullTouchEvent(QTouchEvent *event);
- 
+
 +    quint32 keyboardRepeatRate() const;
 +    void setKeyboardRepeatRate(quint32 rate);
 +
@@ -73,7 +73,7 @@ index 550611a..7860db8 100644
 --- a/src/compositor/wayland_wrapper/qwlkeyboard.cpp
 +++ b/src/compositor/wayland_wrapper/qwlkeyboard.cpp
 @@ -74,6 +74,8 @@ Keyboard::Keyboard(Compositor *compositor, InputDevice *seat)
- #ifndef QT_NO_WAYLAND_XKB
+     , m_keymap_fd(-1)
      , m_state(0)
  #endif
 +    , m_repeatRate(40)
@@ -84,7 +84,7 @@ index 550611a..7860db8 100644
 @@ -148,6 +150,38 @@ void Keyboard::setKeymap(const QWaylandKeymap &keymap)
      m_pendingKeymap = true;
  }
- 
+
 +quint32 Keyboard::repeatRate() const
 +{
 +    return m_repeatRate;
@@ -126,7 +126,7 @@ index 550611a..7860db8 100644
      // Send repeat information
 -    send_repeat_info(resource->handle, 40, 400);
 +    send_repeat_info(resource->handle, m_repeatRate, m_repeatDelay);
- 
+
  #ifndef QT_NO_WAYLAND_XKB
      if (m_context) {
 diff --git a/src/compositor/wayland_wrapper/qwlkeyboard_p.h b/src/compositor/wayland_wrapper/qwlkeyboard_p.h
@@ -136,7 +136,7 @@ index 4450311..943e222 100644
 @@ -87,6 +87,12 @@ public:
      void setFocus(Surface *surface);
      void setKeymap(const QWaylandKeymap &keymap);
- 
+
 +    quint32 repeatRate() const;
 +    void setRepeatRate(quint32 rate);
 +
@@ -154,8 +154,7 @@ index 4450311..943e222 100644
 +    quint32 m_repeatRate;
 +    quint32 m_repeatDelay;
  };
- 
- } // namespace QtWayland
--- 
-2.4.4
 
+ } // namespace QtWayland
+--
+2.5.1
