@@ -1,0 +1,30 @@
+# Maintainer: Max Bruckner
+pkgname="xdg-app"
+pkgver=0.3.6
+pkgrel=1
+pkgdesc="Tool for managing sandboxed applications and their runtimes."
+arch=( "i686" "x86_64" )
+url="http://www.freedesktop.org/software/xdg-app"
+license=('unknown')
+depends=( 'ostree-git' 'fuse' 'docbook-xsl' 'libgsystem'
+		'libsoup' 'libseccomp' 'attr' 'libcap')
+source=(
+	"http://www.freedesktop.org/software/xdg-app/releases/xdg-app-${pkgver}.tar.xz"
+)
+
+md5sums=('3bc835b96b8f2d5652c45bb7d2ef7ade')
+
+prepare() {
+	cd "${srcdir}/${pkgbase}"
+	./autogen.sh --prefix=/usr
+}
+
+build() {
+	cd "${srcdir}/${pkgbase}"
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgbase}"
+	make DESTDIR="$pkgdir" install
+}
