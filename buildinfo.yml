@@ -13,6 +13,6 @@ packages:
   qt5-graphicaleffects-git: v5.5.0.1.gb4ef5a9
   qt5-quickcontrols-git: v5.5.0.11.g56dfb59
   qt5-svg-git: v5.5.0.1.g93d77ed
-  qt5-wayland-dev-git: 5.5.0.r23.g3dc9cfd
+  qt5-wayland-dev-git: 5.5.0.r24.g10fd51a
   qt5-xmlpatterns-git: v5.5.0.3.g69c5390
   xdg-app-git: ef223b6

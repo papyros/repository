@@ -8,7 +8,7 @@
 
 _pkgname=qt5-wayland
 pkgname=${_pkgname}-dev-git
-pkgver=5.5.0.r23.g3dc9cfd
+pkgver=5.5.0.r24.g10fd51a
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework (QtWayland) - Version for Developers!"
 arch=("i686" "x86_64")
