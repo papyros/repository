@@ -9,3 +9,4 @@ channels:
       - papyros-shell
       - papyros-settings
       - gdm
+      - liri-browser
