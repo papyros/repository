@@ -1,7 +1,7 @@
 # Maintainer: Mirco Tischler <mt-ml at gmx dot de>
 
 pkgname=xdg-app
-pkgver=0.4.0
+pkgver=0.4.1
 pkgrel=1
 pkgdesc='An application deployment framework for desktop apps'
 arch=('i686' 'x86_64')
@@ -11,19 +11,8 @@ depends=('ostree' 'libseccomp' 'fuse')
 makedepends=('git' 'docbook-xsl')
 _libglnxrev='d59a63e'
 install='xdg-app.install'
-source=("$url/releases/$pkgname-$pkgver.tar.xz"
-        "0001-fix-fuse-error.patch"
-        "0002-fix-tests-build-failure.patch")
-sha256sums=('60a30b7afad8625e3a2eb5ca92ffd4a9f84b8e6f65a2ba3110e11cebc94e1bce'
-            '8181e106a7280776d55d7042bd80dc0ffee360f9e58366747d9b098a8ef87d7a'
-            '7cc5bd53b81e207c90515a58e6b4255a90e094c83dfa39a948e2788bd7a670d6')
-
-prepare() {
-    cd "$srcdir/$pkgname-$pkgver"
-
-    git apply ../0001-fix-fuse-error.patch
-    git apply ../0002-fix-tests-build-failure.patch
-}
+source=("$url/releases/$pkgname-$pkgver.tar.xz")
+sha256sums=('bffc24486822ac65e2ac3a150f951b24c955dacee4961f4e0c70edc5425302e2')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
