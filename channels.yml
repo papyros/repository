@@ -10,3 +10,4 @@ channels:
       - papyros-settings
       - gdm
       - liri-browser
+      - xdg-app
