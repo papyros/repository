@@ -14,6 +14,13 @@ install='xdg-app.install'
 source=("$url/releases/$pkgname-$pkgver.tar.xz")
 sha256sums=('60a30b7afad8625e3a2eb5ca92ffd4a9f84b8e6f65a2ba3110e11cebc94e1bce')
 
+prepare() {
+    cd "$srcdir/$pkgname-$pkgver"
+
+    git apply ../0001-fix-fuse-error.patch
+    git apply ../0002-fix-tests-build-failure.patch
+}
+
 build() {
   cd "$srcdir/$pkgname-$pkgver"
   ./configure --prefix=/usr --libexecdir=/usr/lib --sysconfdir=/etc

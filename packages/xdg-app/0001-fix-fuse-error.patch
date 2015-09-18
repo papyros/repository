@@ -1,0 +1,25 @@
+From 2d31c3c7da776deed2abf476c399139eb3229bec Mon Sep 17 00:00:00 2001
+From: Alexander Larsson <alexl@redhat.com>
+Date: Fri, 18 Sep 2015 14:27:32 +0200
+Subject: [PATCH 2/2] fuse: Supply mode when creating files
+
+https://bugs.freedesktop.org/show_bug.cgi?id=92034
+---
+ document-portal/xdp-fuse.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/document-portal/xdp-fuse.c b/document-portal/xdp-fuse.c
+index 547cee9..2d013ae 100644
+--- a/document-portal/xdp-fuse.c
++++ b/document-portal/xdp-fuse.c
+@@ -1468,7 +1468,7 @@ xdp_fuse_create (fuse_req_t req,
+           return;
+         }
+
+-      fd = openat (dir_fd, basename, O_CREAT|O_EXCL|O_RDONLY|O_NOFOLLOW|O_CLOEXEC);
++      fd = openat (dir_fd, basename, O_CREAT|O_EXCL|O_RDONLY|O_NOFOLLOW|O_CLOEXEC, mode & 0777);
+       if (fd < 0)
+         {
+           fuse_reply_err (req, errno);
+--
+2.5.2
