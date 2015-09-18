@@ -16,4 +16,5 @@ packages:
   qt5-svg-git: v5.5.0.1.g93d77ed
   qt5-wayland-dev-git: 5.5.0.r24.g10fd51a
   qt5-xmlpatterns-git: v5.5.0.3.g69c5390
+  xdg-app: 0.3.6
   xdg-app-git: ef223b6
