@@ -7,18 +7,13 @@ pkgdesc="A Web Browser using the QML Material framework from the Papyros Project
 arch=("i686" "x86_64")
 url="https://github.com/liri-browser/liri-browser"
 license=("GPLv3")
-depends=("qt5-base" "qt5-webengine" "qml-material-git")
+depends=("qt5-base" "qt5-webengine" "qml-material")
 makedepends=("git")
 provides=("$pkgname")
 install=$pkgname.install
-source=("$pkgname::git+https://github.com/liri-browser/liri-browser.git"
+source=("$pkgname::git+https://github.com/liri-browser/liri-browser.git#tag=v${pkgver}"
         "liri-browser.sh" "liri-browser.desktop" "liri-browser.install")
 sha256sums=("SKIP" "SKIP" "SKIP" "SKIP")
-
-prepare() {
-  cd "$srcdir/$pkgname"
-  git checkout v$pkgver
-}
 
 build() {
 	mkdir -p build
@@ -28,20 +23,20 @@ build() {
 }
 
 package() {
-	cd build
-	make INSTALL_ROOT="$pkgdir" install
+    cd build
+    make INSTALL_ROOT="$pkgdir" install
 
-  mkdir -p "$pkgdir"/usr/bin
-  mkdir -p "$pkgdir"/usr/share/applications
+    mkdir -p "$pkgdir"/usr/bin
+    mkdir -p "$pkgdir"/usr/share/applications
 
-  for i in 16x16 22x22 32x32 48x48 64x64 128x128 256x256; do
-    install -Dm644 "$srcdir"/"$pkgname"/icons/liri-browser.png \
-                   "$pkgdir"/usr/share/icons/hicolor/$i/apps/liri-browser.png
-  done
-  install -m755 ../liri-browser.sh \
-                "$pkgdir"/usr/bin/liri-browser
-  install -m755 ../liri-browser.desktop \
-                "$pkgdir"/usr/share/applications/liri-browser.desktop
+    for i in 16x16 22x22 32x32 48x48 64x64 128x128 256x256; do
+        install -Dm644 "$srcdir"/"$pkgname"/icons/liri-browser.png \
+                       "$pkgdir"/usr/share/icons/hicolor/$i/apps/liri-browser.png
+    done
+    install -m755 ../liri-browser.sh \
+            "$pkgdir"/usr/bin/liri-browser
+    install -m755 ../liri-browser.desktop \
+            "$pkgdir"/usr/share/applications/liri-browser.desktop
 }
 
 # Additional functions to generate a changelog
