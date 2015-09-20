@@ -12,7 +12,7 @@ makedepends=('pkg-config' 'python2' 'libxslt' 'docbook-xml' 'pcre' 'libffi' 'elf
 source=(http://ftp.gnome.org/pub/GNOME/sources/glib/${pkgver:0:4}/glib-$pkgver.tar.xz
         revert-warn-glib-compile-schemas.patch)
 sha256sums=('ba1a37d64b391c5202017cce81375e36f82e0b3eef7e9c3f1c5bbaf7c92f98c8'
-            '049240975cd2f1c88fbe7deb28af14d4ec7d2640495f7ca8980d873bb710cc97')
+            '6967ba8481ce194ed083a462343386e32fea236e343299d3066a2106e1114e5f')
 
 prepare() {
   cd glib-$pkgver
