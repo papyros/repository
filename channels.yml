@@ -4,7 +4,6 @@ channels:
   runtime:
     packages:
       - ostree
-      - qml-extras
       - qml-material
       - papyros-shell
       - papyros-settings
