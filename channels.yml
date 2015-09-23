@@ -3,11 +3,12 @@ origin_url: http://dash.papyros.io/ostree
 channels:
   runtime:
     packages:
-      - ostree-git
+      - ostree
       - qml-extras
       - qml-material
       - papyros-shell
       - papyros-settings
+      - materialos-icon-theme
       - gdm
       - liri-browser
       - xdg-app

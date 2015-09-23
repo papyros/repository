@@ -1,0 +1,40 @@
+# Maintainer: Philippe Loctaux <loctauxphilippe@gmail.com>
+
+_pkgname=materialos-icon-theme
+pkgname=${_pkgname}-git
+pkgver=0.r33.91eeeb4
+pkgrel=1
+pkgdesc='A community driven material design icon pack'
+arch=('any')
+url='https://github.com/materialos/Linux-Icon-Pack'
+license=('CCPL:by-sa')
+makedepends=('git')
+provides=('materialos-icon-theme')
+conflicts=('materialos-icon-theme')
+source=('git+https://github.com/materialos/Linux-Icon-Pack.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  	cd "$srcdir/${_pkgname}"
+  	#pkg ver withtout 'v' prefix
+  	git describe --long | sed -r 's/^v//;s/([^-]*-g)/r\1/;s/-/./g'
+}
+
+package() {
+	cd "$srcdir/${_pkgname}/MaterialOS"
+
+	install -dm 755 "$pkgdir"/usr/share/icons/MaterialOS
+	cp -dr --no-preserve='ownership' . "$pkgdir"/usr/share/icons/MaterialOS
+}
+
+# Additional functions to generate a changelog
+
+changelog() {
+    cd "$pkgname"
+  	git log $1..HEAD --no-merges --format=" * %s"
+}
+
+gitref() {
+    cd "$pkgname"
+  	git rev-parse HEAD
+}
