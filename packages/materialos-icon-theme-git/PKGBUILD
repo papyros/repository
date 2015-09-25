@@ -33,11 +33,11 @@ package() {
 # Additional functions to generate a changelog
 
 changelog() {
-    cd "$pkgname"
-  	git log $1..HEAD --no-merges --format=" * %s"
+    cd "$srcdir/${_pkgname}"
+    git log $1..HEAD --no-merges --format=" * %s"
 }
 
 gitref() {
-    cd "$pkgname"
-  	git rev-parse HEAD
+    cd "$srcdir/${_pkgname}"
+    git rev-parse HEAD
 }
