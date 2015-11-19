@@ -12,7 +12,7 @@ makedepends=('git' 'docbook-xsl')
 _libglnxrev='d59a63e'
 install='xdg-app.install'
 source=("$url/releases/$pkgname-$pkgver.tar.xz")
-sha256sums=('c3dd025eda9306e8ebcca178df8a1ea3f536ddb8809b2deb8a6dc697ff075b6e')
+sha256sums=('4703a89fc7a03283daec7addbdc37e4df90f59c14572373c986661cbd98463af')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
