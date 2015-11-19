@@ -5,18 +5,18 @@ packages:
   hawaii-qt5-wayland-git: v5.4.0.beta1.106.g6e80c7f
   linux-user-chroot: '2015.1'
   liri-browser: c7e47b4436671b71a78b5d4373c1ac3ad126d0d3
-  materialos-icon-theme-git: 823693962b9e75d02a3f4fc8f3c3b83d40955c6c
+  materialos-icon-theme-git: 9d1a28cb70cb6d377027781939955287c1531702
   ostree-git: '2015.9'
   papyros-settings: 56fa0a407b5af3a9212cde3159f4ac16ff86fcda
-  papyros-shell: d440aefbb288576f55845880209e755c19432af8
+  papyros-shell: 8ec084276618271fbcc05e25a267d5358d8862e3
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
-  qml-material: 42da3ad60a8e4e086b106cd300c3b809b372cf2d
+  qml-material: 80685754e3425f807a038e590916f1a25c053a91
   qt5-base-git: v5.5.0.beta1.362.gec8c1dc
   qt5-declarative-git: v5.5.0.19.ga3f686c
   qt5-graphicaleffects-git: v5.5.0.1.gb4ef5a9
   qt5-quickcontrols-git: v5.5.0.11.g56dfb59
   qt5-svg-git: v5.5.0.1.g93d77ed
-  qt5-wayland-dev-git: 5.5.0.r27.g5dd83e3
+  qt5-wayland-dev-git: 5.5.1.r4.g9d40864
   qt5-xmlpatterns-git: v5.5.0.3.g69c5390
-  xdg-app: 0.4.2.1
+  xdg-app: 0.4.5
   xdg-app-git: ef223b6

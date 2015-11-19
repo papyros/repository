@@ -2,7 +2,7 @@
 
 _pkgname=materialos-icon-theme
 pkgname=${_pkgname}-git
-pkgver=r149.8236939
+pkgver=r193.9d1a28c
 pkgrel=1
 pkgdesc='A community driven material design icon pack'
 arch=('any')
