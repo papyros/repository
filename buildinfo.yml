@@ -8,7 +8,7 @@ packages:
   materialos-icon-theme-git: 9d1a28cb70cb6d377027781939955287c1531702
   ostree-git: '2015.9'
   papyros-settings: 56fa0a407b5af3a9212cde3159f4ac16ff86fcda
-  papyros-shell: e24c0dfc0b09986f468233d541235e8b5791b4d4
+  papyros-shell: d38ae86b95831272fb436d506a04895dd4cebae4
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: 80685754e3425f807a038e590916f1a25c053a91
   qt5-base-git: v5.5.0.beta1.362.gec8c1dc
