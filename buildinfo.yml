@@ -5,7 +5,7 @@ packages:
   hawaii-qt5-wayland-git: v5.4.0.beta1.106.g6e80c7f
   linux-user-chroot: '2015.1'
   liri-browser: c7e47b4436671b71a78b5d4373c1ac3ad126d0d3
-  materialos-icon-theme-git: 9d1a28cb70cb6d377027781939955287c1531702
+  materialos-icon-theme-git: 551c58dd2f4d60954c58b70635212ecaf39de632
   ostree-git: '2015.9'
   papyros-settings: 56fa0a407b5af3a9212cde3159f4ac16ff86fcda
   papyros-shell: 527afba000f6fc1aa57de45301eba0436d1cf8d2
