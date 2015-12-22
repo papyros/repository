@@ -11,7 +11,7 @@ packages:
   papyros-shell: 527afba000f6fc1aa57de45301eba0436d1cf8d2
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: b154c19d954751d132b9f4e0d3269c9f174a20ff
-  qt5-base-git: v5.5.1.100.g0629e87
+  qt5-base-git: v5.5.1.102.ge96fa5a
   qt5-declarative-git: v5.5.0.19.ga3f686c
   qt5-graphicaleffects-git: v5.5.0.1.gb4ef5a9
   qt5-quickcontrols-git: v5.5.0.11.g56dfb59

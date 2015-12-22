@@ -4,7 +4,7 @@
 
 _pkgname=qt5-base
 pkgname=$_pkgname-git
-pkgver=v5.5.1.100.g0629e87
+pkgver=v5.5.1.102.ge96fa5a
 pkgrel=1
 pkgdesc="A cross-platform application and UI framework"
 arch=("i686" "x86_64")
