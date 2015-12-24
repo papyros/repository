@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Liri Vinyl
+Comment=Music player
+Keywords=media;video;movie;videos;movies;
+GenericName=Music
+Exec=liri-vinyl
+Icon=multimedia-audio-player
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Video;Media;QT;QML;

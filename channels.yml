@@ -10,4 +10,7 @@ channels:
       - materialos-icon-theme
       - gdm
       - liri-browser
+      - liri-calculator
+      - liri-player
+      - liri-vinyl
       - xdg-app

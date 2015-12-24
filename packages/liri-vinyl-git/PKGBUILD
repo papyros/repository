@@ -1,0 +1,58 @@
+# Maintainer: Michael Spencer <sonrisesoftware@gmail.com>
+
+_pkgname=liri-vinyl
+pkgname=${_pkgname}-git
+pkgver=r41.befb827
+pkgrel=1
+pkgdesc="A Material Design music player"
+arch=("i686" "x86_64")
+url="https://github.com/liri-project/liri-vinyl"
+license=("GPLv3")
+depends=("qt5-base" "qt5-declarative" "qt5-quickcontrols" "qml-material"
+         "gstreamer" "taglib")
+makedepends=("git")
+provides=("${_pkgname}")
+conflicts=("${_pkgname}" "${_pkgname}-git")
+source=("${_pkgname}::git+https://github.com/liri-project/liri-vinyl.git"
+        "liri-vinyl.desktop")
+sha256sums=("SKIP" "SKIP")
+
+pkgver() {
+  	cd "$srcdir/${_pkgname}"
+
+    ( set -o pipefail
+        git describe --long 2>/dev/null | sed -r 's/^v//;s/([^-]*-g)/r\1/;s/-/./g' ||
+        printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+    )
+}
+
+build() {
+	mkdir -p build
+	cd build
+	qmake "$srcdir/${_pkgname}/${_pkgname}"
+	make
+}
+
+package() {
+    cd build
+
+    mkdir -p "$pkgdir"/usr/bin
+    mkdir -p "$pkgdir"/usr/share/applications
+
+    install -m755 liri-vinyl \
+                "$pkgdir"/usr/bin/liri-vinyl
+    install -m755 ../liri-vinyl.desktop \
+                "$pkgdir"/usr/share/applications/liri-vinyl.desktop
+}
+
+# Additional functions to generate a changelog
+
+changelog() {
+    cd "$pkgname"
+    git log $1..HEAD --no-merges --format=" * %s"
+}
+
+gitref() {
+    cd "$pkgname"
+    git rev-parse HEAD
+}
