@@ -6,6 +6,7 @@ channels:
       - ostree
       - qml-material
       - papyros-shell
+      - papyros-files
       - papyros-settings
       - materialos-icon-theme
       - gdm
