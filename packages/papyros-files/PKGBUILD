@@ -7,7 +7,7 @@ pkgdesc="The file manager for Papyros"
 arch=("i686" "x86_64")
 url="https://github.com/papyros/files-app"
 license=("LGPL")
-depends=("qt5-declarative" "qt5-graphicaleffects" "qt5-translations" "qml-material" "taglib"
+depends=("qt5-declarative" "qt5-graphicaleffects" "qt5-tools" "qml-material" "taglib"
 	"kdeclarative")
 makedepends=("git" "cmake" "intltool" "extra-cmake-modules")
 optdepends=('pulseaudio: audio support')
