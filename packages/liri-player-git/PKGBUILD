@@ -56,7 +56,7 @@ build() {
 
 package() {
 	cd build
-    
+
     mkdir -p "$pkgdir"/usr/bin
     mkdir -p "$pkgdir"/usr/share/applications
 
@@ -69,11 +69,11 @@ package() {
 # Additional functions to generate a changelog
 
 changelog() {
-    cd "$pkgname"
+    cd "${_pkgname}"
     git log $1..HEAD --no-merges --format=" * %s"
 }
 
 gitref() {
-    cd "$pkgname"
+    cd "${_pkgname}"
     git rev-parse HEAD
 }
