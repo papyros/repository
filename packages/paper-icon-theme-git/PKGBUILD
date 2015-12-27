@@ -1,0 +1,39 @@
+pkgname=paper-icon-theme-git
+pkgver=0.r2.aca8802
+pkgrel=1
+pkgdesc="Paper is an icon theme for GTK based desktops and fits perfectly the paper-gtk-theme"
+arch=('i686' 'x86_64')
+url="https://github.com/snwh/paper-icon-theme"
+license=('CC BY-SA 4.0')
+depends=('librsvg')
+makedepends=('git')
+provides=('paper-icon-theme')
+conflicts=('paper-icon-theme')
+source=("$pkgname"::'git+https://github.com/snwh/paper-icon-theme.git')
+# Because the sources are not static, skip Git checksum:
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$pkgname"
+  # cutting off 'foo-' prefix that presents in the git tag
+  git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+package() {
+  cd "$srcdir/$pkgname/Paper"
+  install -d -m 755 "$pkgdir"/usr/share/icons/Paper
+  rm -rf {.git,.gitignore,CONTRIBUTORS,COPYING,CREDITS,LICENSE.txt,README.md}
+  cp -r . "$pkgdir"/usr/share/icons/Paper/
+}
+
+# Additional functions to generate a changelog
+
+changelog() {
+    cd "$pkgname"
+    git log $1..HEAD --no-merges --format=" * %s"
+}
+
+gitref() {
+    cd "$pkgname"
+    git rev-parse HEAD
+}

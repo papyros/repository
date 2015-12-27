@@ -1,6 +1,7 @@
 # Maintainer: Riley Trautman <asonix.dev@gmail.com>
 
-pkgname=liri-browser
+_pkgname=liri-browser
+pkgname=${_pkgname}-git
 pkgver=0.3.r233.gc857f45
 pkgrel=1
 pkgdesc="A Web Browser using the QML Material framework from the Papyros Project"
@@ -9,15 +10,15 @@ url="https://github.com/liri-project/liri-browser"
 license=("GPLv3")
 depends=("qt5-base" "qt5-webengine" "qt5-multimedia" "qml-material")
 makedepends=("git")
-provides=("$pkgname")
-conflicts=("$pkgname")
-install=$pkgname.install
-source=("$pkgname::git+https://github.com/liri-project/liri-browser.git"
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+install=${_pkgname}.install
+source=("${_pkgname}::git+https://github.com/liri-project/liri-browser.git"
         "liri-browser.sh" "liri-browser.desktop" "liri-browser.install")
 sha256sums=("SKIP" "SKIP" "SKIP" "SKIP")
 
 pkgver() {
-  cd "$pkgname"
+  cd "${_pkgname}"
   # cutting off 'foo-' prefix that presents in the git tag
   git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
@@ -25,7 +26,7 @@ pkgver() {
 build() {
 	mkdir -p build
 	cd build
-	qmake "$srcdir/$pkgname"
+	qmake "$srcdir/${_pkgname}"
 	make
 }
 
@@ -37,7 +38,7 @@ package() {
     mkdir -p "$pkgdir"/usr/share/applications
 
     for i in 16x16 22x22 32x32 48x48 64x64 128x128 256x256; do
-        install -Dm644 "$srcdir"/"$pkgname"/icons/liri-browser.png \
+        install -Dm644 "$srcdir"/"${_pkgname}"/icons/liri-browser.png \
                        "$pkgdir"/usr/share/icons/hicolor/$i/apps/liri-browser.png
     done
     install -m755 ../liri-browser.sh \
