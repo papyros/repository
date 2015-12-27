@@ -1,7 +1,7 @@
 packages:
   greenisland-git: 3ca6d0450f3f10a39992dfb9762b85b99f8fcad4
   linux-user-chroot: '2015.1'
-  liri-browser-git: 7df0bc650dad25301e3cbb557a5a06a0c9ace6e3
+  liri-browser-git: c857f4551ca6af1e7a57a0a8969d14e1f36211f2
   liri-calculator-git: 26f0683392661e067c9b700b59cdd0a4d92ab5b0
   liri-player-git: 9f79ce9685049cfa1b93f7062c9b8c5abf9901a2
   liri-vinyl-git: befb827256008bdd8dd74db94ae570cfef68ba0c
