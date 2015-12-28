@@ -30,7 +30,7 @@ source=("$_pkgname::git://code.qt.io/qt/qtwayland.git#branch=${_ver}"
 sha256sums=('SKIP'
             '1a7ce4a79474b9c5a307b90b9f35a15bc2f7a314676a91e411d3e07dc97ec5d5'
             'bb8f838c2ee59ab248e90c8297269f07a3ef279b4db950a50b3215fffe572afe'
-            '5f1f6dcff0bbd626952a1a09e0044a44121c8f2b065d25ecde0dc8ccc1')
+            '5f1f6dcff0bbd626952a1a09e0044a44121c8f2b065d25ecde0dc8ccc1672289')
 
 pkgver() {
   	cd "$srcdir/${_pkgname}"
