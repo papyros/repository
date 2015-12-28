@@ -7,7 +7,7 @@ pkgdesc="Green Island: Qt-based compositor infrastructure for Wayland"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://github.com/greenisland/greenisland.git'
 license=('GPL', 'LGPL')
-depends=('qt5-declarative' 'libxcursor' 'xcb-util-cursor')
+depends=('qt5-base-git' 'qt5-declarative' 'libxcursor' 'xcb-util-cursor')
 makedepends=('git' 'gdb' 'extra-cmake-modules')
 options=('debug')
 provides=("greenisland")
@@ -16,8 +16,10 @@ conflicts=("greenisland")
 _gitroot="git://github.com/greenisland/greenisland.git"
 _gitbranch=master
 _gitname=greenisland
-source=(${_gitname}::${_gitroot})
-md5sums=('SKIP')
+source=(${_gitname}::${_gitroot}
+        '0001-Include-a-keyboard-feature-backported-from-Qt-5.6.patch')
+md5sums=('SKIP'
+         '86c8e7336a05e8770ca05e7e56dbcd56')
 
 pkgver() {
   cd "${_gitname}"
@@ -27,6 +29,7 @@ pkgver() {
 
 prepare() {
 	mkdir build
+    git apply ../0001-Include-a-keyboard-feature-backported-from-Qt-5.6.patch
 }
 
 build() {

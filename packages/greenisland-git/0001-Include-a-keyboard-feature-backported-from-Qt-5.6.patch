@@ -1,0 +1,78 @@
+From 8e58e168dc0b529df86e2c67f91ab1752a7e474d Mon Sep 17 00:00:00 2001
+From: Michael Spencer <sonrisesoftware@gmail.com>
+Date: Mon, 28 Dec 2015 13:26:58 -0600
+Subject: [PATCH] Include a keyboard feature backported from Qt 5.6
+
+---
+ src/waylandcompositor/CMakeLists.txt                    | 1 +
+ src/waylandcompositor/wayland_wrapper/qwlcompositor.cpp | 6 ------
+ src/waylandcompositor/wayland_wrapper/qwlcompositor_p.h | 2 --
+ 3 files changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/src/waylandcompositor/CMakeLists.txt b/src/waylandcompositor/CMakeLists.txt
+index 3721aaf..0fbb775 100644
+--- a/src/waylandcompositor/CMakeLists.txt
++++ b/src/waylandcompositor/CMakeLists.txt
+@@ -12,6 +12,7 @@ include(../GreenIslandMacros.cmake)
+ 
+ set(SOURCES
+     shared/qwaylandmimehelper.cpp
++    shared/qwaylandxkb.cpp
+     wayland_wrapper/qwlcompositor.cpp
+     wayland_wrapper/qwldatadevice.cpp
+     wayland_wrapper/qwldatadevicemanager.cpp
+diff --git a/src/waylandcompositor/wayland_wrapper/qwlcompositor.cpp b/src/waylandcompositor/wayland_wrapper/qwlcompositor.cpp
+index c7e39b5..0d36dec 100644
+--- a/src/waylandcompositor/wayland_wrapper/qwlcompositor.cpp
++++ b/src/waylandcompositor/wayland_wrapper/qwlcompositor.cpp
+@@ -106,7 +106,6 @@ namespace QtWayland {
+ 
+ static Compositor *compositor;
+ 
+-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+ class WindowSystemEventHandler : public QWindowSystemEventHandler
+ {
+ public:
+@@ -153,7 +152,6 @@ public:
+ 
+     Compositor *compositor;
+ };
+-#endif
+ 
+ Compositor *Compositor::instance()
+ {
+@@ -178,17 +176,13 @@ Compositor::Compositor(QWaylandCompositor *qt_compositor, QWaylandCompositor::Ex
+     , m_qtkeyExtension(0)
+     , m_textInputManager()
+     , m_inputPanel()
+-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+     , m_eventHandler(new WindowSystemEventHandler(this))
+-#endif
+     , m_retainSelection(false)
+ {
+     m_timer.start();
+     compositor = this;
+ 
+-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+     QWindowSystemInterfacePrivate::installWindowSystemEventHandler(m_eventHandler.data());
+-#endif
+ }
+ 
+ void Compositor::init()
+diff --git a/src/waylandcompositor/wayland_wrapper/qwlcompositor_p.h b/src/waylandcompositor/wayland_wrapper/qwlcompositor_p.h
+index 575eadb..25f2577 100644
+--- a/src/waylandcompositor/wayland_wrapper/qwlcompositor_p.h
++++ b/src/waylandcompositor/wayland_wrapper/qwlcompositor_p.h
+@@ -234,9 +234,7 @@ protected:
+     QScopedPointer<TextInputManager> m_textInputManager;
+     QScopedPointer<InputPanel> m_inputPanel;
+     QList<QWaylandGlobalInterface *> m_globals;
+-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+     QScopedPointer<QWindowSystemEventHandler> m_eventHandler;
+-#endif
+ 
+     static void bind_func(struct wl_client *client, void *data,
+                           uint32_t version, uint32_t id);
+-- 
+2.6.4
+
