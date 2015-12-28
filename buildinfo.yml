@@ -9,7 +9,9 @@ packages:
   ostree-git: '2015.11'
   papyros-files: afbd1fd9495f91ca053e38bb7c7ef44081a7e255
   papyros-settings: 56fa0a407b5af3a9212cde3159f4ac16ff86fcda
-  papyros-shell: fb301c6edb497ade4febf464adac749f1bf156b7
+  papyros-shell: c39d395cc4da032302b6395321ccd9f244c4651a
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: b154c19d954751d132b9f4e0d3269c9f174a20ff
+  qt5-base-git: v5.5.1.106.gc8c4ad0
+  qt5-wayland-dev-git: 5.5.1.r4.g9d40864
   xdg-app: 0.4.6
