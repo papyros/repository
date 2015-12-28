@@ -8,7 +8,7 @@ channels:
       - papyros-shell
       - papyros-files
       - papyros-settings
-      - materialos-icon-theme
+      - paper-icon-theme
       - gdm
       - liri-browser
       - liri-calculator

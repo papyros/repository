@@ -24,14 +24,13 @@ pkgver() {
 }
 
 build() {
-	mkdir -p build
-	cd build
-	qmake "$srcdir/${_pkgname}"
+    cd "${_pkgname}"
+	qmake "liri-browser.pro"
 	make
 }
 
 package() {
-    cd build
+    cd "${_pkgname}"
     make INSTALL_ROOT="$pkgdir" install
 
     mkdir -p "$pkgdir"/usr/bin
