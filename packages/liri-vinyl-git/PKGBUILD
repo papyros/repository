@@ -2,7 +2,7 @@
 
 _pkgname=liri-vinyl
 pkgname=${_pkgname}-git
-pkgver=r41.befb827
+pkgver=r44.aded4c2
 pkgrel=1
 pkgdesc="A Material Design music player"
 arch=("i686" "x86_64")
