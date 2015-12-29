@@ -14,7 +14,7 @@ source=("$pkgname"::'git+https://github.com/snwh/paper-icon-theme.git')
 md5sums=('SKIP')
 
 pkgver() {
-  cd "$pkgname"
+  cd "$srcdir/$pkgname"
   # cutting off 'foo-' prefix that presents in the git tag
   git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
@@ -29,11 +29,11 @@ package() {
 # Additional functions to generate a changelog
 
 changelog() {
-    cd "$pkgname"
+    cd "$srcdir/$pkgname"
     git log $1..HEAD --no-merges --format=" * %s"
 }
 
 gitref() {
-    cd "$pkgname"
+    cd "$srcdir/$pkgname"
     git rev-parse HEAD
 }
