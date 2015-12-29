@@ -17,9 +17,11 @@ _gitroot="git://github.com/greenisland/greenisland.git"
 _gitbranch=master
 _gitname=greenisland
 source=(${_gitname}::${_gitroot}
-        '0001-Include-a-keyboard-feature-backported-from-Qt-5.6.patch')
+        '0001-Include-a-keyboard-feature-backported-from-Qt-5.6.patch'
+        '0002-Fix-a-crash-caused-by-a-wl_listener-being-shared-bet.patch')
 md5sums=('SKIP'
-         '86c8e7336a05e8770ca05e7e56dbcd56')
+         '86c8e7336a05e8770ca05e7e56dbcd56'
+         '1220444496d633b53eb4e4b29f6ac9df')
 
 pkgver() {
   cd "${_gitname}"
@@ -30,6 +32,7 @@ pkgver() {
 prepare() {
 	mkdir build
     git apply ../0001-Include-a-keyboard-feature-backported-from-Qt-5.6.patch
+    git apply ../0002-Fix-a-crash-caused-by-a-wl_listener-being-shared-bet.patch
 }
 
 build() {

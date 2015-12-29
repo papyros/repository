@@ -1,0 +1,171 @@
+From ad6edb132fd130b868979ee0c551943f0cbfb59f Mon Sep 17 00:00:00 2001
+From: Michael Spencer <sonrisesoftware@gmail.com>
+Date: Tue, 29 Dec 2015 12:01:20 -0600
+Subject: [PATCH] Fix a crash caused by a wl_listener being shared between
+ multiple signals
+
+---
+ .../waylandeglclientbufferintegration.cpp          | 63 +++++++++++-----------
+ .../waylandeglclientbufferintegration.h            | 14 +++++
+ .../wayland_wrapper/qwllistener_p.h                |  3 +-
+ 3 files changed, 46 insertions(+), 34 deletions(-)
+
+diff --git a/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.cpp b/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.cpp
+index 6673bca..b2bf81b 100644
+--- a/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.cpp
++++ b/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.cpp
+@@ -48,7 +48,6 @@
+ #include <qpa/qplatformscreen.h>
+ #include <QtGui/QWindow>
+ #include <QtCore/QPointer>
+-#include <QDebug>
+ 
+ #include <QMutex>
+ #include <QMutexLocker>
+@@ -96,12 +95,6 @@ struct BufferState
+     QSize size;
+ };
+ 
+-struct buffer_destroy_listener
+-{
+-    struct wl_listener listener;
+-    class WaylandEglClientBufferIntegrationPrivate *d;
+-};
+-
+ class WaylandEglClientBufferIntegrationPrivate
+ {
+ public:
+@@ -117,37 +110,12 @@ public:
+         , gl_egl_image_target_texture_2d(0)
+         , funcs(Q_NULLPTR)
+     {
+-        destroy_listener.d = this;
+-        destroy_listener.listener.notify = destroy_listener_callback;
+-    }
+-
+-    static void destroy_listener_callback(wl_listener *listener, void *data) {
+-        static QMutex mutex;
+-        QMutexLocker locker(&mutex);
+-
+-        buffer_destroy_listener *destroy_listener = reinterpret_cast<buffer_destroy_listener *>(listener);
+-        WaylandEglClientBufferIntegrationPrivate *self = destroy_listener->d;
+-        struct ::wl_resource *buffer = static_cast<struct ::wl_resource *>(data);
+-        if (!self->buffers.contains(buffer))
+-            return;
+-
+-        Q_ASSERT(self);
+-        Q_ASSERT(buffer);
+-
+-        BufferState state = self->buffers.take(buffer);
+-
+-        if (state.gl_texture != 0)
+-            glDeleteTextures(1, &state.gl_texture);
+-
+-        if (state.egl_stream != EGL_NO_STREAM_KHR)
+-            self->funcs->destroy_stream(self->egl_display, state.egl_stream);
+     }
+ 
+     EGLDisplay egl_display;
+     bool valid;
+     bool display_bound;
+     QHash<struct ::wl_resource *, BufferState> buffers;
+-    buffer_destroy_listener destroy_listener;
+ 
+     PFNEGLBINDWAYLANDDISPLAYWL egl_bind_wayland_display;
+     PFNEGLUNBINDWAYLANDDISPLAYWL egl_unbind_wayland_display;
+@@ -161,6 +129,34 @@ public:
+     GreenIsland::Platform::EGLStreamConvenience *funcs;
+ };
+ 
++BufferListener::BufferListener(WaylandEglClientBufferIntegrationPrivate *d)
++    : m_private(d)
++{
++    QObject::connect(this, &BufferListener::fired, this, &BufferListener::onFired);
++}
++
++void BufferListener::onFired(void *data) {
++    static QMutex mutex;
++    QMutexLocker locker(&mutex);
++
++    struct ::wl_resource *buffer = static_cast<struct ::wl_resource *>(data);
++    if (!m_private->buffers.contains(buffer))
++        return;
++
++    Q_ASSERT(m_private);
++    Q_ASSERT(buffer);
++
++    BufferState state = m_private->buffers.take(buffer);
++
++    if (state.gl_texture != 0)
++        glDeleteTextures(1, &state.gl_texture);
++
++    if (state.egl_stream != EGL_NO_STREAM_KHR)
++        m_private->funcs->destroy_stream(m_private->egl_display, state.egl_stream);
++
++    this->deleteLater();
++}
++
+ WaylandEglClientBufferIntegration::WaylandEglClientBufferIntegration()
+     : QtWayland::ClientBufferIntegration()
+     , d_ptr(new WaylandEglClientBufferIntegrationPrivate)
+@@ -257,7 +253,8 @@ void WaylandEglClientBufferIntegration::initialize(struct ::wl_resource *buffer)
+     if (!buffer || d->buffers.contains(buffer))
+         return;
+ 
+-    wl_signal_add(&buffer->destroy_signal, &d->destroy_listener.listener);
++    BufferListener *listener = new BufferListener(d);
++    listener->listenForDestruction(buffer);
+ }
+ 
+ GLenum WaylandEglClientBufferIntegration::textureTargetForBuffer(struct ::wl_resource *buffer) const
+diff --git a/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.h b/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.h
+index 3d427f3..63ad44d 100644
+--- a/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.h
++++ b/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.h
+@@ -42,12 +42,26 @@
+ #define WAYLANDEGLINTEGRATION_H
+ 
+ #include <waylandcompositor/hardware_integration/qwlclientbufferintegration_p.h>
++#include <waylandcompositor/wayland_wrapper/qwllistener_p.h>
+ #include <QtCore/QScopedPointer>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+ class WaylandEglClientBufferIntegrationPrivate;
+ 
++class BufferListener: public WlListener
++{
++    Q_OBJECT
++public:
++    BufferListener(WaylandEglClientBufferIntegrationPrivate *d);
++
++private slots:
++    void onFired(void *data);
++
++private:
++    WaylandEglClientBufferIntegrationPrivate *m_private;
++};
++
+ class WaylandEglClientBufferIntegration : public QtWayland::ClientBufferIntegration
+ {
+     Q_DECLARE_PRIVATE(WaylandEglClientBufferIntegration)
+diff --git a/src/waylandcompositor/wayland_wrapper/qwllistener_p.h b/src/waylandcompositor/wayland_wrapper/qwllistener_p.h
+index 296a081..0b27ef7 100644
+--- a/src/waylandcompositor/wayland_wrapper/qwllistener_p.h
++++ b/src/waylandcompositor/wayland_wrapper/qwllistener_p.h
+@@ -48,10 +48,11 @@
+ #include <QObject>
+ 
+ #include <wayland-server.h>
++#include <compositor/qwaylandexport.h>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+-class WlListener : public QObject
++class Q_COMPOSITOR_EXPORT WlListener : public QObject
+ {
+     Q_OBJECT
+ public:
+-- 
+2.6.4
+
