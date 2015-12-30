@@ -30,6 +30,7 @@ pkgver() {
 }
 
 prepare() {
+	cd "$srcdir/${_pkgname}"
 	mkdir build
     git apply ../0001-Include-a-keyboard-feature-backported-from-Qt-5.6.patch
     git apply ../0002-Fix-a-crash-caused-by-a-wl_listener-being-shared-bet.patch
