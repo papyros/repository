@@ -2,7 +2,7 @@
 
 _pkgname=liri-calculator
 pkgname=${_pkgname}-git
-pkgver=r71.26f0683
+pkgver=r73.fa464f7
 pkgrel=1
 pkgdesc="Minimal, but full-featured calculator app"
 arch=("i686" "x86_64")
@@ -13,8 +13,9 @@ makedepends=("git")
 provides=("${_pkgname}")
 conflicts=("${_pkgname}" "${_pkgname}-git")
 source=("${_pkgname}::git+https://github.com/liri-project/liri-calculator.git"
-        "liri-calculator.desktop")
-sha256sums=("SKIP" "SKIP")
+        "liri-calculator.desktop"
+        "0001-Set-the-window-decoration-color.patch")
+sha256sums=("SKIP" "SKIP" "SKIP")
 
 pkgver() {
   	cd "$srcdir/${_pkgname}"
@@ -25,8 +26,13 @@ pkgver() {
     )
 }
 
+prepare() {
+    mkdir -p build
+    cd "$srcdir/${_pkgname}"
+    git apply ../0001-Set-the-window-decoration-color.patch
+}
+
 build() {
-	mkdir -p build
 	cd build
 	qmake "$srcdir/${_pkgname}"
 	make
@@ -38,7 +44,7 @@ package() {
     mkdir -p "$pkgdir"/usr/bin
     mkdir -p "$pkgdir"/usr/share/applications
 
-    install -m755 papyros-calculator \
+    install -m755 liri-calculator \
                 "$pkgdir"/usr/bin/liri-calculator
     install -m755 ../liri-calculator.desktop \
                 "$pkgdir"/usr/share/applications/liri-calculator.desktop
