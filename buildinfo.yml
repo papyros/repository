@@ -4,15 +4,15 @@ packages:
   liri-browser-git: 6a760469ecae7172b3618c7f9f96ded6f3e7b25f
   liri-calculator-git: fa464f71fab66faa7692e764eed878c4c8f2f288
   liri-player-git: 9f79ce9685049cfa1b93f7062c9b8c5abf9901a2
-  liri-vinyl-git: aded4c27fd62388251c6fe5ca71de4d96fec2132
+  liri-vinyl-git: 21a33e152cbf9e578ef184ab876fae726e2c3410
   materialos-icon-theme-git: 551c58dd2f4d60954c58b70635212ecaf39de632
   ostree-git: '2015.11'
   paper-icon-theme-git: ae82c98cc8c4248d940fdd27870f146c70cdf228
   papyros-files: f95637cd8afcd5d91391d690417501d67cf1c005
-  papyros-settings: 56fa0a407b5af3a9212cde3159f4ac16ff86fcda
-  papyros-shell: 79667a3fb9076cca7fdf259b04fe9aef8fc46594
+  papyros-settings: d720ed732dd12761d15b067ee19aa1f552c971b5
+  papyros-shell: 533c352e42d08b4843be12d0e85fc7b149dd7613
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
-  qml-material: c65485a9bf2ea3c799cf48b0f06ba0fda8a3fc02
+  qml-material: d9635eb9abd75856040fafd913f67b72b287019a
   qt5-base-git: v5.5.1.106.gc8c4ad0
   qt5-wayland-dev-git: 5.5.1.r4.g9d40864
   xdg-app: 0.4.6
