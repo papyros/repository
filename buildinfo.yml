@@ -9,8 +9,8 @@ packages:
   ostree-git: '2015.11'
   paper-icon-theme-git: ae82c98cc8c4248d940fdd27870f146c70cdf228
   papyros-files: f95637cd8afcd5d91391d690417501d67cf1c005
-  papyros-settings: d720ed732dd12761d15b067ee19aa1f552c971b5
-  papyros-shell: 533c352e42d08b4843be12d0e85fc7b149dd7613
+  papyros-settings: b69d96d0efd10bd4963085b3aa4c0cfd0dd49406
+  papyros-shell: d3eed7d98c1e172759301c46423e3a1d56a3f554
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: d9635eb9abd75856040fafd913f67b72b287019a
   qt5-base-git: v5.5.1.106.gc8c4ad0
