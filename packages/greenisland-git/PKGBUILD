@@ -2,13 +2,14 @@
 
 pkgname=greenisland-git
 pkgver=0.6.92.r40.g3ca6d04
-pkgrel=2
+pkgrel=3
 pkgdesc="Green Island: Qt-based compositor infrastructure for Wayland"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://github.com/greenisland/greenisland.git'
 license=('GPL', 'LGPL')
-depends=('qt5-base-git' 'qt5-declarative' 'libxcursor' 'xcb-util-cursor')
-makedepends=('git' 'gdb' 'extra-cmake-modules')
+depends=('qt5-base-git' 'qt5-declarative' 'systemd' 'libdrm' 'libinput' 'qt5-declarative'
+         'xkeyboard-config' 'libxkbcommon' 'fontconfig' 'freetype2')
+makedepends=('git' 'gdb' 'extra-cmake-modules' 'xcb-util-cursor' 'libxcursor')
 options=('debug')
 provides=("greenisland")
 conflicts=("greenisland")

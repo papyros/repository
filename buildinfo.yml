@@ -8,6 +8,7 @@ packages:
   materialos-icon-theme-git: 551c58dd2f4d60954c58b70635212ecaf39de632
   ostree-git: '2015.11'
   paper-icon-theme-git: ae82c98cc8c4248d940fdd27870f146c70cdf228
+  papyros: b69d96d0efd10bd4963085b3aa4c0cfd0dd49406
   papyros-files: f95637cd8afcd5d91391d690417501d67cf1c005
   papyros-settings: b69d96d0efd10bd4963085b3aa4c0cfd0dd49406
   papyros-shell: d3eed7d98c1e172759301c46423e3a1d56a3f554
