@@ -1,19 +1,19 @@
+build_number: 1
 packages:
   greenisland-git: 3ca6d0450f3f10a39992dfb9762b85b99f8fcad4
   linux-user-chroot: '2015.1'
-  liri-browser-git: 6a760469ecae7172b3618c7f9f96ded6f3e7b25f
+  liri-browser-git: f11a68d698703beb2185a99f27f2810d13300d4f
   liri-calculator-git: fa464f71fab66faa7692e764eed878c4c8f2f288
   liri-player-git: 9f79ce9685049cfa1b93f7062c9b8c5abf9901a2
-  liri-vinyl-git: 21a33e152cbf9e578ef184ab876fae726e2c3410
+  liri-vinyl-git: 61b605d476ec0a4801d9761199965d246b4b2cc7
   materialos-icon-theme-git: 551c58dd2f4d60954c58b70635212ecaf39de632
   ostree-git: '2015.11'
   paper-icon-theme-git: ae82c98cc8c4248d940fdd27870f146c70cdf228
-  papyros: b69d96d0efd10bd4963085b3aa4c0cfd0dd49406
   papyros-files: f95637cd8afcd5d91391d690417501d67cf1c005
   papyros-settings: b69d96d0efd10bd4963085b3aa4c0cfd0dd49406
-  papyros-shell: d3eed7d98c1e172759301c46423e3a1d56a3f554
+  papyros-shell: 94681cbfd273661a9bbe55d34b2e86dac90bc163
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: d9635eb9abd75856040fafd913f67b72b287019a
-  qt5-base-git: v5.5.1.106.gc8c4ad0
+  qt5-base-git: 5.5.1.r106.gc8c4ad0
   qt5-wayland-dev-git: 5.5.1.r4.g9d40864
   xdg-app: 0.4.6
