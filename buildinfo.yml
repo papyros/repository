@@ -1,6 +1,7 @@
-build_number: 3
+build_number: 4
 packages:
   greenisland-git: 30b26cd971746413fef9b718a6473a4e0946c81f
+  libpapyros-git: 19d82b1c79be9eb90e36193ab8e2614c0b1620c4
   linux-user-chroot: '2015.1'
   liri-browser-git: f11a68d698703beb2185a99f27f2810d13300d4f
   liri-calculator-git: fa464f71fab66faa7692e764eed878c4c8f2f288
@@ -11,9 +12,9 @@ packages:
   paper-icon-theme-git: ae82c98cc8c4248d940fdd27870f146c70cdf228
   papyros-files: f95637cd8afcd5d91391d690417501d67cf1c005
   papyros-settings: b69d96d0efd10bd4963085b3aa4c0cfd0dd49406
-  papyros-shell: 94681cbfd273661a9bbe55d34b2e86dac90bc163
+  papyros-shell: b07dbe84fbba90c75155ffccc1b6b22a76eae9a7
   qml-extras: 41ec9297686cd4a868f5db7ec8d1754d4ea99641
   qml-material: b714c9c201805f39a13963023b4a2bfe7074a78c
-  qt5-base-git: 5.5.1.r120.gc38b14e
+  qt5-base-git: 5.5.1.r122.g1e2b425
   qt5-wayland-dev-git: 5.5.1.r4.g9d40864
   xdg-app: 0.4.6
