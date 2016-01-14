@@ -1,0 +1,34 @@
+name: papyros
+version: testing
+label: PAPYROS_TESTING
+packages:
+    - mesa
+    - mesa-vdpau
+    - xf86-input-synaptics
+    - xf86-video-ati
+    - xf86-video-fbdev
+    - xf86-video-intel
+    - xf86-video-nouveau
+    - xf86-video-openchrome
+    - xf86-video-vesa
+    - xf86-video-vmware
+    - xorg-server
+    - xorg-server-utils
+    - sddm
+    - xdg-app
+    - qml-material
+    - papyros-shell
+    - papyros-settings
+    - papyros-files
+    - paper-icon-theme
+    - liri-browser
+    - liri-player-git
+    - liri-vinyl-git
+    - liri-calculator-git
+    - networkmanager
+    - pulseaudio
+repos:
+    papyros: http://dash.papyros.io/repos/$repo/$arch
+display_manager: sddm
+files:
+    sddm.conf: /etc/sddm.conf
