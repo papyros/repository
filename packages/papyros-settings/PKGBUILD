@@ -21,6 +21,9 @@ pkgver() {
 
 prepare() {
 	mkdir -p build
+}
+
+build() {
 	cd build
 	cmake "$srcdir/$pkgname" -DCMAKE_INSTALL_PREFIX=/usr
 	make
