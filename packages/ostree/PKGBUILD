@@ -1,12 +1,10 @@
-pkgname='ostree-git'
+pkgname=ostree
 pkgver=2015.11
 pkgrel=1
 url="http://git.gnome.org/browse/ostree/tree/README.md"
 pkgdesc='OSTree is a tool for managing bootable, versioned filesystem trees.'
 arch=('i686' 'x86_64')
 license=('GPL' 'LGPL')
-provides=('ostree')
-conflicts=("ostree")
 makedepends=('pkg-config' 'gtk-doc' 'git')
 depends=('libarchive'
          'linux-user-chroot'

@@ -1,6 +1,7 @@
 # Maintainer: Michael Spencer <sonrisesoftware@gmail.com>
 
-pkgname=papyros-shell
+_pkgname=papyros-shell
+pkgname=$_pkgname-git
 pkgver=0.0.5.r168.gb07dbe8
 pkgrel=1
 pkgdesc="Wayland and QtQuick based desktop shell for Papyros"
@@ -8,7 +9,7 @@ arch=("i686" "x86_64")
 url="https://github.com/papyros/papyros-shell"
 license=("GPL")
 depends=("qt5-base-git" "qt5-declarative" "qt5-quickcontrols" "qt5-wayland-dev-git"
-         "qt5-graphicaleffects" "greenisland-git" "qml-material" "kdeclarative"
+         "qt5-graphicaleffects" "greenisland-git" "qml-material-git" "kdeclarative"
 		 "pam" "libpulse" "libqtxdg" "solid" "kconfig" "networkmanager-qt"
          "ttf-dejavu" "ttf-droid" "libpapyros-git")
 optdepends=('pulseaudio: audio support'
@@ -16,12 +17,13 @@ optdepends=('pulseaudio: audio support'
             'paper-icon-theme: default icon theme'
             'networkmanager: networking support')
 makedepends=("git" "python" "extra-cmake-modules")
-provides=("$pkgname")
-source=("$pkgname::git+https://github.com/papyros/papyros-shell.git#branch=develop")
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+source=("$_pkgname::git+https://github.com/papyros/papyros-shell.git#branch=develop")
 sha256sums=("SKIP")
 
 pkgver() {
-  cd "$pkgname"
+  cd "$_pkgname"
   # cutting off 'foo-' prefix that presents in the git tag
   git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
@@ -32,7 +34,7 @@ prepare() {
 
 build() {
     cd build
-	cmake "$srcdir/$pkgname" \
+	cmake "$srcdir/$_pkgname" \
 			-DCMAKE_INSTALL_PREFIX=/usr \
 			-DLIB_INSTALL_DIR=lib \
 			-DLIBEXEC_INSTALL_DIR=lib \
@@ -49,11 +51,11 @@ package() {
 # Additional functions to generate a changelog
 
 changelog() {
-    cd "$pkgname"
+    cd "$_pkgname"
   	git log $1..HEAD --no-merges --format=" * %s"
 }
 
 gitref() {
-    cd "$pkgname"
+    cd "$_pkgname"
   	git rev-parse HEAD
 }

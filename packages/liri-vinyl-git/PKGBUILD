@@ -8,7 +8,7 @@ pkgdesc="A Material Design music player"
 arch=("i686" "x86_64")
 url="https://github.com/liri-project/liri-vinyl"
 license=("GPLv3")
-depends=("qt5-base" "qt5-declarative" "qt5-quickcontrols" "qml-material"
+depends=("qt5-base" "qt5-declarative" "qt5-quickcontrols" "qml-material-git"
          "gstreamer" "taglib")
 makedepends=("git")
 provides=("${_pkgname}")
