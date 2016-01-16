@@ -1,0 +1,17 @@
+name: Papyros
+origin_url: http://dash.papyros.io/ostree
+channels:
+  runtime:
+    packages:
+      - ostree
+      - qml-material
+      - papyros-shell
+      - papyros-files
+      - papyros-settings
+      - paper-icon-theme
+      - sddm
+      - liri-browser
+      - liri-calculator
+      - liri-player
+      - liri-vinyl
+      - xdg-app

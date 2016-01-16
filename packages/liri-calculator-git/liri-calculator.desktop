@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Liri Calculator
+Comment=Perform arithmetic, scientific or financial calculations
+Keywords=internet;browser;explore;web;
+GenericName=Calculator
+Exec=liri-calculator
+Icon=accessories-calculator
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=QT;QML;Utility;Calculator;

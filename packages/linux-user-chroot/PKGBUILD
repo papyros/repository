@@ -1,0 +1,23 @@
+pkgname='linux-user-chroot'
+pkgver='2015.1'
+pkgrel='1'
+pkgdesc='setuid helper for making bind mounts and chrooting'
+url='http://git.gnome.org/browse/linux-user-chroot/tree/README'
+arch=('i686' 'x86_64')
+license='GPL'
+depends=('glibc' 'libseccomp')
+makedepends=('git')
+source=("https://git.gnome.org/browse/${pkgname}/snapshot/${pkgname}-${pkgver}.tar.gz")
+sha1sums=('127573a72eaee581a48b62beb85ac6c7c5ddd9a3')
+
+build () {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  ./autogen.sh --prefix=/usr --enable-newnet-helper
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make install DESTDIR="${pkgdir}"
+  chmod +s "${pkgdir}/usr/bin"/linux-user-chroot
+}
