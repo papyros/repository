@@ -2,7 +2,7 @@
 
 _pkgname=liri-calculator
 pkgname=${_pkgname}-git
-pkgver=r73.fa464f7
+pkgver=r77.ed0a4f5
 pkgrel=1
 pkgdesc="Minimal, but full-featured calculator app"
 arch=("i686" "x86_64")
