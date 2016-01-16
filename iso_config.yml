@@ -28,7 +28,7 @@ packages:
     - networkmanager
     - pulseaudio
 repos:
-    papyros: http://dash.papyros.io/repos/$repo/$arch
+    papyros-testing: http://dash.papyros.io/repos/$repo/$arch
 display_manager: sddm
 files:
     sddm.conf: /etc/sddm.conf
