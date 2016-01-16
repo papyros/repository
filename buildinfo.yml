@@ -1,7 +1,7 @@
-build_number: 8
+build_number: 9
 packages:
   greenisland-git: 0b60145f7804e0291ec5b166592741931f04722e
-  libpapyros-git: 07de1e4c096529e8c4af7f3eb0763c4baa1e35d2
+  libpapyros-git: 492a148efa2ccb70a4b49168ab93ff7cbb8a7ac4
   linux-user-chroot: '2015.1'
   liri-browser-git: f11a68d698703beb2185a99f27f2810d13300d4f
   liri-calculator-git: ed0a4f54380bc76f73dd31e325505eaf57290b3d
