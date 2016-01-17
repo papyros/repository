@@ -1,24 +1,24 @@
 # Maintainer: Michael Spencer <sonrisesoftware@gmail.com>
 
-_pkgname=papyros-settings
+_pkgname=papyros-terminal
 pkgname=$_pkgname-git
-pkgver=0.0.1.r5.gb69d96d
+pkgver=0.0.1.
 pkgrel=1
-pkgdesc="The settings app for Papyros"
+pkgdesc="The terminal app for Papyros"
 arch=("i686" "x86_64")
-url="https://github.com/papyros/settings-app"
+url="https://github.com/papyros/terminal-app"
 license=("GPL")
-depends=("qt5-base-git" "qt5-declarative" "qml-material-git" "papyros-shell-git")
+depends=("qt5-base-git" "qt5-declarative" "qml-material-git" "ttf-roboto-mono-powerline-git")
 makedepends=("git" "cmake" "extra-cmake-modules")
 provides=("$_pkgname")
 conflicts=("$_pkgname")
-source=("$_pkgname::git+https://github.com/papyros/settings-app.git#branch=develop")
+source=("$_pkgname::git+https://github.com/papyros/terminal-app.git")
 sha256sums=("SKIP")
 
 pkgver() {
-  cd "$_pkgname"
-  # cutting off 'foo-' prefix that presents in the git tag
-  git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+    cd "$_pkgname"
+    # cutting off 'foo-' prefix that presents in the git tag
+    git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 prepare() {
