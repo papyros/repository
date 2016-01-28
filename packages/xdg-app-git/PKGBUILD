@@ -1,8 +1,9 @@
 # Maintainer: Mirco Tischler <mt-ml at gmx dot de>
 
-pkgname=xdg-app
-pkgver=0.4.6
-pkgrel=2
+_pkgname=xdg-app
+pkgname=$_pkgname-git
+pkgver=0.4.7.r19.g3a70dcf
+pkgrel=1
 pkgdesc='An application deployment framework for desktop apps'
 arch=('i686' 'x86_64')
 url='http://www.freedesktop.org/software/xdg-app'
@@ -11,22 +12,30 @@ depends=('glib2' 'json-glib' 'ostree' 'libseccomp' 'fuse' 'libxau')
 makedepends=('git' 'docbook-xsl')
 _libglnxrev='d59a63e'
 install='xdg-app.install'
-source=("$url/releases/$pkgname-$pkgver.tar.xz")
-sha256sums=('d53db9f71db295ccd13f8cae6c63b83ac01757cb5319f63d961e5b48d1e01df9')
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+source=("${_pkgname}::git+https://github.com/alexlarsson/xdg-app.git")
+sha256sums=("SKIP")
+
+pkgver() {
+    cd "$_pkgname"
+    # cutting off 'foo-' prefix that presents in the git tag
+    git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
 
 build() {
-    cd "$srcdir/$pkgname-$pkgver"
-    ./configure --prefix=/usr --libexecdir=/usr/lib --sysconfdir=/etc --enable-libxdgapp \
-            --disable-userns
+    cd "$srcdir/${_pkgname}"
+    ./autogen.sh
+    ./configure --prefix=/usr --libexecdir=/usr/lib --sysconfdir=/etc --enable-libxdgapp
     make
 }
 
 check() {
-    cd "$srcdir/$pkgname-$pkgver"
+    cd "$srcdir/${_pkgname}"
 }
 
 package() {
-    cd "$srcdir/$pkgname-$pkgver"
+    cd "$srcdir/${_pkgname}"
     make DESTDIR="$pkgdir" install
 
     # remove setuid flag, instead we set CAP_SYSADMIN and CAP_MKNOD in the install script
