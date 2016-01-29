@@ -17,7 +17,7 @@ source=("$_pkgname::git+https://github.com/papyros/terminal-app.git#branch=devel
 sha256sums=("SKIP")
 
 pkgver() {
-    cd "$_pkgname"
+    cd "$srcdir/$_pkgname"
     # cutting off 'foo-' prefix that presents in the git tag
     git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
