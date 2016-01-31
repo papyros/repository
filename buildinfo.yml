@@ -1,7 +1,7 @@
-build_number: 17
+build_number: 18
 packages:
   greenisland-git: 0b60145f7804e0291ec5b166592741931f04722e
-  libpapyros-git: da15692bb8b1524bf99747f1c706ea5b53699f67
+  libpapyros-git: b6923325711766a6ec037dfd993b6a6c28202b68
   linux-user-chroot: '2015.1'
   liri-browser-git: 160e00a9b3de74a229321a3eed2c0ee1dd455ca0
   liri-calculator-git: ed0a4f54380bc76f73dd31e325505eaf57290b3d
@@ -10,6 +10,7 @@ packages:
   materialos-icon-theme-git: 551c58dd2f4d60954c58b70635212ecaf39de632
   ostree: '2015.11'
   paper-icon-theme-git: ae82c98cc8c4248d940fdd27870f146c70cdf228
+  papyros-appcenter-git: 8d02b22a34b3e2678d4bb3a0363aa2482320e0c8
   papyros-files-git: f95637cd8afcd5d91391d690417501d67cf1c005
   papyros-settings-git: 060599e17b5f460175c0a1e9106a743e73b0be5c
   papyros-shell-git: 3a9a8a6056f4878ef3c67c668640c46977d25da2
