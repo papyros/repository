@@ -9,6 +9,6 @@ depends:
     - qt5-base
     - qt5-declarative
     - qml-material
-    - ttf-roboto-mono-powerline
+    - ttf-roboto-mono-powerline-git
     - libpapyros
     - qmltermwidget
