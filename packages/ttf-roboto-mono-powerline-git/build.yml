@@ -1,0 +1,19 @@
+maintainer: Michael Spencer <sonrisesoftware@gmail.com>
+name: ttf-roboto-mono-powerline
+description: Roboto Mono for Powerline
+license: Apache
+url: https://github.com/powerline/fonts
+version: gitver(fonts)
+sources:
+    fonts: https://github.com/powerline/fonts.git
+depends:
+    - fontconfig
+    - xorg-font-utils
+conflicts:
+    - powerline-fonts
+    - powerline-fonts-git
+package:
+    - cd $srcdir/fonts/RobotoMono
+    - find . -iname '*.ttf' -execdir install -Dm644 {} $pkgdir/usr/share/fonts/TTF/{} \;
+    - install -Dm644 LICENSE.txt $pkgdir/usr/share/licenses/$pkgname/LICENSE
+install: ttf-roboto-mono-powerline-git.install
