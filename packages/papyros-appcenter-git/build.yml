@@ -11,3 +11,4 @@ depends:
     - qml-material-git
     - libpapyros-git
     - xdg-app-git
+    - karchive
