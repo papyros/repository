@@ -1,4 +1,4 @@
-build_number: 12
+build_number: 13
 packages:
   greenisland-git: 0b60145f7804e0291ec5b166592741931f04722e
   libpapyros-git: da15692bb8b1524bf99747f1c706ea5b53699f67
@@ -12,7 +12,7 @@ packages:
   paper-icon-theme-git: ae82c98cc8c4248d940fdd27870f146c70cdf228
   papyros-files-git: f95637cd8afcd5d91391d690417501d67cf1c005
   papyros-settings-git: 060599e17b5f460175c0a1e9106a743e73b0be5c
-  papyros-shell-git: 192e0c395242221ccc8d59aa356ab1bfb07ba212
+  papyros-shell-git: 3a9a8a6056f4878ef3c67c668640c46977d25da2
   papyros-terminal-git: 3f7007d36ad7f03d5c8c5427cdd35615567df1dc
   qml-material-git: 2984904b9777625a5bf897e87773814f52525a4a
   qt5-base-git: 5.5.1.r133.ga40ea09
