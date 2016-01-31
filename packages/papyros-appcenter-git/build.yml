@@ -3,7 +3,7 @@ name: papyros-appcenter
 description: The App Center for Papyros
 license: GPL
 url: https://github.com/papyros/software-app
-branch: develop
+branch: master
 type: cmake
 depends:
     - qt5-base
