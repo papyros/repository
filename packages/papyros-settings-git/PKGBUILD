@@ -2,7 +2,7 @@
 
 _pkgname=papyros-settings
 pkgname=$_pkgname-git
-pkgver=0.0.1.r5.gb69d96d
+pkgver=0.1.0.r2.g060599e
 pkgrel=1
 pkgdesc="The settings app for Papyros"
 arch=("i686" "x86_64")

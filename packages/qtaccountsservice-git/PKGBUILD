@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=qtaccountsservice-git
-pkgver=20150909.625848f
+pkgver=20160130.74728c9
 pkgrel=1
 pkgdesc="Qt-style API for AccountsService"
 arch=('i686' 'x86_64')
