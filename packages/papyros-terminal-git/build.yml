@@ -11,3 +11,4 @@ depends:
     - qml-material
     - ttf-roboto-mono-powerline
     - libpapyros
+    - qmltermwidget
