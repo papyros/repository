@@ -6,7 +6,7 @@
 _pkgname=qt5-base
 pkgname=$_pkgname-git
 pkgver=5.5.1.r133.ga40ea09
-pkgrel=1
+pkgrel=2
 pkgdesc="A cross-platform application and UI framework"
 arch=("i686" "x86_64")
 url="https://qt-project.org/"
@@ -14,7 +14,7 @@ license=("GPL3" "LGPL")
 depends=(
 	"dbus" "xcb-util-keysyms" "xcb-util-wm" "xcb-util-image"
 	"libxext" "inputproto" "libgl" "libxkbcommon" "systemd"
-	"libpng" "sqlite" "fontconfig" "icu" "libxrender" "libinput"
+	"libpng" "sqlite" "fontconfig" "icu" "libxrender" "libinput" "qtchooser"
 )
 makedepends=("git" "postgresql-libs" "gtk2")
 optdepends=(
@@ -25,7 +25,7 @@ optdepends=(
 	"libfbclient: Firebird/iBase driver"
 )
 provides=("$_pkgname")
-conflicts=("$_pkgname" "qtchooser")
+conflicts=("$_pkgname")
 source=("$_pkgname::git://code.qt.io/qt/qtbase.git#branch=5.5"
 		"0001-Add-a-way-to-filter-window-system-events.patch")
 sha256sums=('SKIP'
@@ -75,8 +75,4 @@ build() {
 package() {
 	cd "$srcdir/$_pkgname"
 	make INSTALL_ROOT="$pkgdir" install
-      for file in "${pkgdir}"/usr/lib/qt/bin/*; do
-              mkdir -p "${pkgdir}"/usr/bin
-              ln -s /usr/lib/qt/bin/$(basename $file) "${pkgdir}"/usr/bin/$(basename $file)
-      done
 }
