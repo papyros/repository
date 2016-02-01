@@ -10,7 +10,7 @@ channels:
       - papyros-files-git
       - papyros-settings-git
       - papyros-terminal-git
-      - paper-icon-theme-igt
+      - paper-icon-theme-git
       - sddm
       - liri-browser-git
       - liri-calculator-git
