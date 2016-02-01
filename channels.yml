@@ -14,6 +14,7 @@ channels:
       - sddm
       - liri-browser-git
       - liri-calculator-git
-      - liri-player-git
+    #   FIXME: Won't build
+    #   - liri-player-git
       - liri-vinyl-git
       - xdg-app-git
