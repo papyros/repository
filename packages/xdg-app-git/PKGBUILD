@@ -2,7 +2,7 @@
 
 _pkgname=xdg-app
 pkgname=$_pkgname-git
-pkgver=0.4.8.r1.gbd174d9
+pkgver=0.4.8.r4.g9f2769e
 pkgrel=1
 pkgdesc='An application deployment framework for desktop apps'
 arch=('i686' 'x86_64')

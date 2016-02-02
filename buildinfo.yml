@@ -1,4 +1,4 @@
-build_number: 19
+build_number: 20
 packages:
   greenisland-git: 0b60145f7804e0291ec5b166592741931f04722e
   libpapyros-git: b6923325711766a6ec037dfd993b6a6c28202b68
@@ -6,7 +6,7 @@ packages:
   liri-browser-git: 160e00a9b3de74a229321a3eed2c0ee1dd455ca0
   liri-calculator-git: ed0a4f54380bc76f73dd31e325505eaf57290b3d
   liri-player-git: 9f79ce9685049cfa1b93f7062c9b8c5abf9901a2
-  liri-vinyl-git: 4bcbcffe4cc8846c47e3497e6523c9e2b2e6fab4
+  liri-vinyl-git: 6c9cd93182cc47fd88ebe0f3a1a09f992640c047
   materialos-icon-theme-git: 551c58dd2f4d60954c58b70635212ecaf39de632
   ostree: '2015.11'
   paper-icon-theme-git: ae82c98cc8c4248d940fdd27870f146c70cdf228
@@ -16,9 +16,9 @@ packages:
   papyros-shell-git: 3a9a8a6056f4878ef3c67c668640c46977d25da2
   papyros-terminal-git: 3f7007d36ad7f03d5c8c5427cdd35615567df1dc
   qml-material-git: 2984904b9777625a5bf897e87773814f52525a4a
-  qt5-base-git: 5.5.1.r133.ga40ea09
+  qt5-base-git: 5.5.1.r134.gb5ea7a5
   qt5-wayland-dev-git: 5.5.1.r4.g9d40864
   qtaccountsservice-git: 20160130.74728c9
   ttf-roboto-mono-powerline-git: r100.a44abd0
   xdg-app: 0.4.6
-  xdg-app-git: 0.4.8.r1.gbd174d9
+  xdg-app-git: 0.4.8.r4.g9f2769e
