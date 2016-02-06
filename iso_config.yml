@@ -15,13 +15,13 @@ packages:
     - xorg-server
     - xorg-server-utils
     - sddm
-    - xdg-app
-    - qml-material
-    - papyros-shell
-    - papyros-settings
-    - papyros-files
-    - paper-icon-theme
-    - liri-browser
+    - xdg-app-git
+    - qml-material-git
+    - papyros-shell-git
+    - papyros-settings-git
+    - papyros-files-git
+    - paper-icon-theme-git
+    - liri-browser-git
     - liri-player-git
     - liri-vinyl-git
     - liri-calculator-git
