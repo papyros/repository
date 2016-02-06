@@ -16,5 +16,5 @@ channels:
       - liri-calculator-git
     #   FIXME: Won't build
     #   - liri-player-git
-      - liri-vinyl-git
+    #   - liri-vinyl-git
       - xdg-app-git
