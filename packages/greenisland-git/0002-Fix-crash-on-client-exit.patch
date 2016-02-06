@@ -1,0 +1,36 @@
+From 22bb31f1cf9cda2960d3a1021febad73f6b23353 Mon Sep 17 00:00:00 2001
+From: Michael Spencer <sonrisesoftware@gmail.com>
+Date: Tue, 12 Jan 2016 16:28:32 -0600
+Subject: [PATCH 1/1] Fix crash on client exit
+
+Wayland linked lists are implemented by having next and prev pointers
+in the objects themselves. This means that an object can only be in
+one list at the time. If the object is not removed from a list before
+being inserted into another, the original list is corrupted.
+---
+ .../wayland-egl/waylandeglclientbufferintegration.cpp                   | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.cpp b/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.cpp
+index 6673bca..c4a66d7 100644
+--- a/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.cpp
++++ b/src/hardwareintegration/wayland-egl/waylandeglclientbufferintegration.cpp
+@@ -119,6 +119,7 @@ public:
+     {
+         destroy_listener.d = this;
+         destroy_listener.listener.notify = destroy_listener_callback;
++        wl_list_init(&destroy_listener.listener.link);
+     }
+ 
+     static void destroy_listener_callback(wl_listener *listener, void *data) {
+@@ -257,6 +258,7 @@ void WaylandEglClientBufferIntegration::initialize(struct ::wl_resource *buffer)
+     if (!buffer || d->buffers.contains(buffer))
+         return;
+ 
++    wl_list_remove(&d->destroy_listener.listener.link);
+     wl_signal_add(&buffer->destroy_signal, &d->destroy_listener.listener);
+ }
+ 
+-- 
+2.7.0
+
