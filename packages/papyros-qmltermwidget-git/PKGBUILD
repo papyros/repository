@@ -3,7 +3,7 @@
 _pkgname=papyros-qmltermwidget
 pkgname=$_pkgname-git
 pkgrel=1
-pkgver=0.1.0.r2.g4d93f02
+pkgver=0.1.0.r26.g031db29
 pkgdesc='QML port of qtermwidget - Papyros development version'
 arch=('i686' 'x86_64')
 url='https://github.com/papyros/qmltermwidget'
