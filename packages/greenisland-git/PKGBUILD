@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=greenisland-git
-pkgver=0.7.1.r1.g36d36ac
+pkgver=0.7.1
 pkgrel=1
 pkgdesc="Green Island: Qt-based compositor infrastructure for Wayland"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
@@ -14,7 +14,7 @@ options=('debug')
 provides=("greenisland")
 conflicts=("greenisland")
 
-_gitroot="git://github.com/greenisland/greenisland.git"
+_gitroot="git://github.com/greenisland/greenisland.git#tag=v${pkgver}"
 _gitbranch=master
 _gitname=greenisland
 source=(${_gitname}::${_gitroot}
@@ -23,12 +23,6 @@ source=(${_gitname}::${_gitroot}
 md5sums=('SKIP'
          '86c8e7336a05e8770ca05e7e56dbcd56'
          '1d8f98a1043dae64878210ee7f09bf8e')
-
-pkgver() {
-  cd "${_gitname}"
-  # cutting off 'foo-' prefix that presents in the git tag
-  git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}
 
 prepare() {
     mkdir -p build
